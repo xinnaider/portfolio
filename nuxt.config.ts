@@ -1,0 +1,29 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: true },
+
+  app: {
+    head: {
+      htmlAttrs: { lang: 'pt-BR' },
+      link: [
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: ''
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap'
+        }
+      ],
+      meta: [
+        { name: 'description', content: 'José Fernando Gomes Marcial — Desenvolvedor Full Stack' }
+      ]
+    }
+  }
+})
