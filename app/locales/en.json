@@ -141,5 +141,38 @@
     "linkedinAria": "José Fernando's LinkedIn",
     "location": "São Paulo – SP, Brazil",
     "copyright": "© {year} José Fernando Gomes Marcial"
+  },
+  "manga": {
+    "chapter": {
+      "1": "CH. 1 — THE DEVELOPER",
+      "2": "CH. 2 — BATTLE RECORD",
+      "3": "CH. 3 — PROFILE & ARSENAL",
+      "4": "CH. 4 — ORIGINS & CONTACT"
+    },
+    "narration": {
+      "experience": "▸ 5 YEARS. 3 COMPANIES. SYSTEMS THAT WORK.",
+      "aboutTech": "▸ WHO IS HE? AND WHAT WEAPONS DOES HE WIELD?",
+      "educationContact": "▸ EVERY HERO HAS AN ORIGIN. AND A WAY TO BE FOUND."
+    },
+    "bubble": {
+      "hero": "\"I build systems that actually work.\"",
+      "about": "\"5 years. 20+ projects. Zero regrets.\""
+    },
+    "closing": "▸ END OF CHAPTER 4 — THE STORY CONTINUES...",
+    "siteLabel": "jfernando.dev",
+    "pageLabel": "PG.",
+    "missionLabel": "CURRENT MISSION",
+    "previousLabel": "PREVIOUS",
+    "originLabel": "ORIGIN",
+    "profileLabel": "PROFILE",
+    "arsenalLabel": "ARSENAL",
+    "formationLabel": "FORMATION",
+    "contactLabel": "CONTACT",
+    "backendLabel": "BACKEND",
+    "frontendLabel": "FRONTEND",
+    "infraLabel": "INFRA & DB",
+    "sendMessage": "SEND MESSAGE",
+    "yearsExp": "Years Exp.",
+    "projects": "Projects"
   }
 }

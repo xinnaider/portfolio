@@ -141,5 +141,38 @@
     "linkedinAria": "LinkedIn de José Fernando",
     "location": "São Paulo – SP, Brasil",
     "copyright": "© {year} José Fernando Gomes Marcial"
+  },
+  "manga": {
+    "chapter": {
+      "1": "CAP. 1 — O DESENVOLVEDOR",
+      "2": "CAP. 2 — TRAJETÓRIA DE BATALHA",
+      "3": "CAP. 3 — PERFIL & ARSENAL",
+      "4": "CAP. 4 — ORIGEM & CONTATO"
+    },
+    "narration": {
+      "experience": "▸ 5 ANOS. 3 EMPRESAS. SISTEMAS QUE FUNCIONAM.",
+      "aboutTech": "▸ QUEM É ELE? E COM QUAIS ARMAS LUTA?",
+      "educationContact": "▸ TODO HERÓI TEM UMA ORIGEM. E UMA FORMA DE SER ENCONTRADO."
+    },
+    "bubble": {
+      "hero": "\"Construo sistemas que realmente funcionam.\"",
+      "about": "\"5 anos. 20+ projetos. Zero arrependimentos.\""
+    },
+    "closing": "▸ FIM DO CAPÍTULO 4 — A HISTÓRIA CONTINUA...",
+    "siteLabel": "jfernando.dev",
+    "pageLabel": "PAG.",
+    "missionLabel": "MISSÃO ATUAL",
+    "previousLabel": "ANTERIOR",
+    "originLabel": "ORIGEM",
+    "profileLabel": "PERFIL",
+    "arsenalLabel": "ARSENAL",
+    "formationLabel": "FORMAÇÃO",
+    "contactLabel": "CONTATO",
+    "backendLabel": "BACKEND",
+    "frontendLabel": "FRONTEND",
+    "infraLabel": "INFRA & DB",
+    "sendMessage": "ENVIAR MENSAGEM",
+    "yearsExp": "Anos de Exp.",
+    "projects": "Projetos"
   }
 }
