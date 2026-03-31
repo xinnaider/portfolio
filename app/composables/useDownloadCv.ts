@@ -142,7 +142,7 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
 
       const cvEl = doc.querySelector('.cv') as HTMLElement
       const canvas = await html2canvas(cvEl, {
-        scale: 4,
+        scale: 2,
         useCORS: true,
         backgroundColor: '#ffffff',
         width: 794,
@@ -157,7 +157,7 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
         format: 'a4'
       })
 
-      pdf.addImage(canvas.toDataURL('image/jpeg', 1.0), 'JPEG', 0, 0, 210, 297)
+      pdf.addImage(canvas.toDataURL('image/png', 1.0), 'PNG', 0, 0, 210, 297)
       pdf.save('Jose-Fernando-CV.pdf')
     } finally {
       isGenerating.value = false
