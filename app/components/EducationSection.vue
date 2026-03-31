@@ -58,11 +58,9 @@ const entries = computed(() => tm('education.entries') as EducationEntry[])
               </span>
             </div>
             <div>
-              <div class="flex items-center gap-3 mb-1">
-                <p class="font-display font-bold text-base sm:text-xl md:text-2xl text-white">
-                  {{ rt(entry.title) }}
-                </p>
-              </div>
+              <p class="font-display font-bold text-base sm:text-xl md:text-2xl text-white">
+                {{ rt(entry.title) }}
+              </p>
               <p
                 class="text-xs sm:text-sm font-semibold mt-1"
                 :class="index === 0 ? 'text-accent' : 'text-white/60'"

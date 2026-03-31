@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
 
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/manga-theme.css', '~/assets/css/panel-shatter.css', '~/assets/css/ink-splash.css'],
 
   vite: {
     plugins: [tailwindcss()]
@@ -49,17 +49,21 @@ export default defineNuxtConfig({
         {
           rel: 'preload',
           as: 'style',
-          href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap',
           onload: "this.onload=null;this.rel='stylesheet'"
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap',
           media: 'print',
           onload: "this.media='all'"
         }
       ],
       script: [
+        {
+          innerHTML: "(function(){try{var t=localStorage.getItem('portfolio-theme');if(t==='manga')document.documentElement.setAttribute('data-theme','manga')}catch(e){}})()",
+          type: 'text/javascript',
+        },
         {
           src: 'https://cloud.umami.is/script.js',
           defer: true,

@@ -1,0 +1,89 @@
+.panel-shatter-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.panel-shatter-fragment {
+  position: absolute;
+  background: var(--fragment-bg, #0a0a0a);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  will-change: transform, opacity;
+}
+
+/* Shatter out animation */
+.panel-shatter-fragment.shatter-out {
+  animation: shatterOut var(--duration, 600ms) var(--delay, 0ms) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Recompose in animation */
+.panel-shatter-fragment.recompose-in {
+  animation: recomposeIn var(--duration, 600ms) var(--delay, 0ms) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes shatterOut {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translate(var(--tx, 0px), var(--ty, 0px))
+      rotate(var(--rot, 0deg))
+      scale(var(--sc, 0.7));
+    opacity: 0;
+  }
+}
+
+@keyframes recomposeIn {
+  0% {
+    transform:
+      translate(var(--tx, 0px), var(--ty, 0px))
+      rotate(var(--rot, 0deg))
+      scale(var(--sc, 0.7));
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Speed line flash at center */
+.panel-shatter-flash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200vw;
+  height: 200vh;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.panel-shatter-flash.active {
+  animation: shatterFlash 400ms 300ms ease-out forwards;
+}
+
+@keyframes shatterFlash {
+  0% { opacity: 0; }
+  30% { opacity: 0.15; }
+  100% { opacity: 0; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .panel-shatter-fragment {
+    animation: none !important;
+  }
+
+  .panel-shatter-overlay.reduced-motion {
+    animation: simpleFade 300ms ease-out forwards;
+  }
+
+  @keyframes simpleFade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}

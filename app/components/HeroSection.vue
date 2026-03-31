@@ -16,7 +16,6 @@ const { download, isGenerating } = useDownloadCv()
         transition: 'left 0.3s ease-out, top 0.3s ease-out'
       }"
     />
-
     <div
       class="absolute w-[400px] h-[400px] rounded-full opacity-[0.04] blur-[100px] pointer-events-none"
       :style="{
@@ -38,7 +37,6 @@ const { download, isGenerating } = useDownloadCv()
       class="absolute inset-0 opacity-[0.03] pointer-events-none"
       style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"
     />
-
     <div
       class="absolute top-[12%] left-[8%] w-12 md:w-20 h-12 md:h-20 border border-white/[0.06] rounded-full"
       :style="{ transform: `translate(${mouseX * 15}px, ${scrollY * 0.08 + mouseY * 10}px)` }"

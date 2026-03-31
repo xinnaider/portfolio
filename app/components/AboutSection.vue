@@ -48,22 +48,13 @@ const highlights = computed(() => tm('about.highlights') as Array<{ title: strin
 
       <div class="grid lg:grid-cols-2 gap-8 sm:gap-16">
         <div>
-          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed" data-stagger="1">
-            {{ $t('about.bio1') }}
-          </p>
-          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="2">
-            {{ $t('about.bio2') }}
-          </p>
-          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="3">
-            {{ $t('about.bio3') }}
-          </p>
+          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed" data-stagger="1">{{ $t('about.bio1') }}</p>
+          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="2">{{ $t('about.bio2') }}</p>
+          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="3">{{ $t('about.bio3') }}</p>
         </div>
 
         <div>
-          <div
-            ref="countersRef"
-            class="grid grid-cols-3 gap-4 sm:gap-8"
-          >
+          <div ref="countersRef" class="grid grid-cols-3 gap-4 sm:gap-8">
             <div class="reveal border-l-2 border-accent pl-3 sm:pl-6" data-stagger="1">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">+{{ yearsCounter.count.value }}</span>
               <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">{{ $t('about.yearsLabel') }}</p>

@@ -58,7 +58,7 @@ const experiences = computed(() => tm('experience.jobs') as Experience[])
         <div class="space-y-8 sm:space-y-12 lg:space-y-16">
           <div
             v-for="(exp, index) in experiences"
-            :key="exp.company"
+            :key="rt(exp.company)"
             class="relative pl-6 sm:pl-8 lg:pl-20"
           >
             <div class="absolute left-0 lg:left-8 top-2 -translate-x-1/2 z-10">

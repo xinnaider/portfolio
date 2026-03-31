@@ -62,9 +62,7 @@ const copyright = computed(() => t('contact.copyright', { year: currentYear }))
       </div>
 
       <div class="reveal mt-16 sm:mt-24 pt-6 sm:pt-8 border-t border-border-light flex flex-col sm:flex-row justify-between items-center gap-4" data-stagger="4">
-        <p class="text-text-muted text-sm">
-          {{ copyright }}
-        </p>
+        <p class="text-text-muted text-sm">{{ copyright }}</p>
         <p class="font-display font-bold text-sm text-black/20">
           jfernando<span class="text-accent/40">.dev</span>
         </p>

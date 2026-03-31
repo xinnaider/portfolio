@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { Theme } from '~/composables/useTheme'
+import VioletLayout from '~/components/layouts/VioletLayout.vue'
+import MangaLayout from '~/components/layouts/MangaLayout.vue'
+
 const { t } = useI18n()
 
 useHead({
@@ -8,9 +12,20 @@ useHead({
   ]
 })
 
-useScrollReveal()
+const { observeNew } = useScrollReveal()
 
 const { progress } = useScrollProgress()
+const { theme } = useTheme()
+
+const currentLayout = computed(() =>
+  theme.value === Theme.MANGA ? MangaLayout : VioletLayout
+)
+
+// Re-observe .reveal elements after layout swap so new DOM nodes are picked up
+watch(theme, async () => {
+  await nextTick()
+  observeNew()
+})
 </script>
 
 <template>
@@ -22,12 +37,10 @@ const { progress } = useScrollProgress()
       :style="{ width: `${progress * 100}%` }"
     />
 
-    <NavBar />
-    <HeroSection />
-    <AboutSection />
-    <ExperienceSection />
-    <TechStackSection />
-    <EducationSection />
-    <ContactSection />
+    <NavBar v-if="theme === Theme.VIOLET" />
+    <component :is="currentLayout" :key="theme" />
+    <FloatingPanel />
+    <PanelShatter />
+    <InkSplash />
   </div>
 </template>

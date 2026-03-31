@@ -20,6 +20,19 @@
   --color-text-muted-dark: #666666;
 }
 
+:root {
+  --theme-accent: #8b5cf6;
+  --theme-accent-light: #a78bfa;
+  --theme-accent-dark: #7c3aed;
+  --theme-border-radius: 12px;
+  --theme-border-radius-sm: 8px;
+  --theme-border-width: 1px;
+  --theme-card-shadow: 0 0 20px rgba(139, 92, 246, 0.05);
+  --theme-font-display: 'Syne', sans-serif;
+  --theme-gutter: 0px;
+  --theme-panel-border-color: rgba(255, 255, 255, 0.08);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -146,7 +159,7 @@ html {
 
 /* Gradient text helper */
 .gradient-text {
-  background: linear-gradient(135deg, #8b5cf6, #a78bfa, #c4b5fd, #8b5cf6);
+  background: linear-gradient(135deg, var(--theme-accent), var(--theme-accent-light), #c4b5fd, var(--theme-accent));
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -181,7 +194,7 @@ html {
   top: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  background: linear-gradient(90deg, var(--theme-accent), var(--theme-accent-light));
   z-index: 100;
   transition: width 0.1s linear;
 }
