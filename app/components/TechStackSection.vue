@@ -1,28 +1,15 @@
 <script setup lang="ts">
 const { scrollY } = useScrollProgress()
 
-const categories = [
-  {
-    label: 'Linguagens',
-    items: ['Java', 'PHP', 'JavaScript', 'Python', 'Node.js', 'C# (.NET)']
-  },
-  {
-    label: 'Frameworks',
-    items: ['Spring Boot', 'Laravel', 'Nest.js', 'Vue.js', 'Next.js', 'Electron']
-  },
-  {
-    label: 'Arquitetura',
-    items: ['Microservices', 'REST APIs', 'RabbitMQ', 'API Gateway', 'Eureka']
-  },
-  {
-    label: 'Infra & Outros',
-    items: ['Docker', 'DevOps', 'Web Scraping', 'SNMP', 'LwM2M']
-  },
-  {
-    label: 'AI & Produtividade',
-    items: ['Claude Code', 'Cursor AI', 'Multi-Agent Workflows', 'Prompt Engineering']
-  }
-]
+const categoryKeys = ['languages', 'frameworks', 'architecture', 'infra', 'ai'] as const
+
+const categoryItems: Record<string, string[]> = {
+  languages: ['Java', 'PHP', 'JavaScript', 'Python', 'Node.js', 'C# (.NET)'],
+  frameworks: ['Spring Boot', 'Laravel', 'Nest.js', 'Vue.js', 'Next.js', 'Electron'],
+  architecture: ['Microservices', 'REST APIs', 'RabbitMQ', 'API Gateway', 'Eureka'],
+  infra: ['Docker', 'DevOps', 'Web Scraping', 'SNMP', 'LwM2M'],
+  ai: ['Claude Code', 'Cursor AI', 'Multi-Agent Workflows', 'Prompt Engineering'],
+}
 </script>
 
 <template>
@@ -37,21 +24,21 @@ const categories = [
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
-        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Ferramentas</p>
+        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">{{ $t('tech.label') }}</p>
       </div>
 
       <h2 class="reveal font-display font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-6">
-        TECNOLOGIAS
+        {{ $t('tech.title') }}
       </h2>
 
       <p class="reveal text-text-muted text-sm sm:text-lg max-w-xl mb-10 sm:mb-16" data-stagger="1">
-        Tecnologias que utilizo no dia a dia para construir soluções robustas e escaláveis.
+        {{ $t('tech.description') }}
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
         <div
-          v-for="(category, catIndex) in categories"
-          :key="category.label"
+          v-for="(key, catIndex) in categoryKeys"
+          :key="key"
           class="reveal-scale group"
           :data-stagger="catIndex + 1"
         >
@@ -65,12 +52,12 @@ const categories = [
             </div>
 
             <h3 class="font-display font-bold text-sm sm:text-base text-black mb-3 sm:mb-5">
-              {{ category.label }}
+              {{ $t(`tech.categories.${key}`) }}
             </h3>
 
             <div class="flex flex-wrap gap-2">
               <span
-                v-for="item in category.items"
+                v-for="item in categoryItems[key]"
                 :key="item"
                 class="px-3 py-1.5 bg-surface-light rounded-lg text-xs text-black/70 font-medium"
               >
@@ -86,27 +73,27 @@ const categories = [
       <div class="flex whitespace-nowrap" style="animation: marquee 30s linear infinite">
         <span v-for="n in 2" :key="n" class="flex gap-8 mr-8">
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">JAVA</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">SPRING BOOT</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">VUE.JS</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">DOCKER</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">RABBITMQ</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">.NET</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">LARAVEL</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">NEXT.JS</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">PYTHON</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">NEST.JS</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">MICROSERVICES</span>
-          <span class="text-accent/20">•</span>
+          <span class="text-accent/20">&bull;</span>
         </span>
       </div>
     </div>
