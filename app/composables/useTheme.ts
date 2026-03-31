@@ -1,14 +1,17 @@
-type Theme = 'violet' | 'manga'
+export enum Theme {
+  VIOLET = 'violet',
+  MANGA = 'manga',
+}
 
-const theme = ref<Theme>('violet')
+const theme = ref<Theme>(Theme.VIOLET)
 
 export function useTheme() {
-  const isManga = computed(() => theme.value === 'manga')
+  const isManga = computed(() => theme.value === Theme.MANGA)
 
   function setTheme(newTheme: Theme) {
     theme.value = newTheme
     if (import.meta.client) {
-      document.documentElement.setAttribute('data-theme', newTheme === 'violet' ? '' : newTheme)
+      document.documentElement.setAttribute('data-theme', newTheme === Theme.VIOLET ? '' : newTheme)
       localStorage.setItem('portfolio-theme', newTheme)
     }
   }
@@ -16,15 +19,15 @@ export function useTheme() {
   function toggleTheme() {
     const { triggerTransition } = useThemeTransition()
     triggerTransition(() => {
-      setTheme(theme.value === 'violet' ? 'manga' : 'violet')
+      setTheme(theme.value === Theme.VIOLET ? Theme.MANGA : Theme.VIOLET)
     })
   }
 
   function initTheme() {
     if (import.meta.client) {
       const saved = localStorage.getItem('portfolio-theme') as Theme | null
-      if (saved === 'manga') {
-        setTheme('manga')
+      if (saved === Theme.MANGA) {
+        setTheme(Theme.MANGA)
       }
     }
   }
