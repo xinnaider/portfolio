@@ -30,5 +30,6 @@ const { progress } = useScrollProgress()
     <EducationSection />
     <ContactSection />
     <FloatingPanel />
+    <PanelShatter />
   </div>
 </template>

@@ -14,7 +14,10 @@ export function useTheme() {
   }
 
   function toggleTheme() {
-    setTheme(theme.value === 'violet' ? 'manga' : 'violet')
+    const { triggerTransition } = useThemeTransition()
+    triggerTransition(() => {
+      setTheme(theme.value === 'violet' ? 'manga' : 'violet')
+    })
   }
 
   function initTheme() {
