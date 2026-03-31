@@ -25,7 +25,7 @@ watch(isInkSplashing, (val) => {
 
 <template>
   <div
-    v-show="phase !== 'idle'"
+    v-if="phase !== 'idle'"
     class="ink-splash-overlay"
     :class="{ 'reduced-motion': prefersReducedMotion }"
   >
