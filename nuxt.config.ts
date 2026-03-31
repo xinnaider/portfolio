@@ -49,7 +49,7 @@ export default defineNuxtConfig({
         }
       ],
       meta: [
-        { name: 'description', content: 'José Fernando Gomes Marcial — Desenvolvedor Full Stack' }
+        { name: 'description', content: 'José Fernando — Desenvolvedor Full Stack' }
       ]
     }
   }

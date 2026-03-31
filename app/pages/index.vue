@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'José Fernando Gomes Marcial — Full Stack Developer'
+  title: 'José Fernando — Full Stack Developer'
 })
 
 useScrollReveal()
