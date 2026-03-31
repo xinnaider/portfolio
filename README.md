@@ -1,75 +1,76 @@
-# Nuxt Minimal Starter
+# jfernando.dev
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Portfolio pessoal de **Jose Fernando Gomes Marcial** — Desenvolvedor Full Stack.
 
-## Setup
+Construido com Nuxt 4, Tailwind CSS v4, e animacoes customizadas (typing effect, scroll-reveal, parallax, contadores animados).
 
-Make sure to install dependencies:
+## Tech Stack
+
+- **Framework:** Nuxt 4 (Vue 3 + Nitro)
+- **Estilos:** Tailwind CSS v4
+- **Tipografia:** Syne + Space Grotesk (Google Fonts)
+- **Deploy:** Docker + Nginx + Let's Encrypt
+
+## Desenvolvimento
 
 ```bash
-# npm
-npm install
-
-# pnpm
+# Instalar dependencias
 pnpm install
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+# Servidor de desenvolvimento
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Acesse `http://localhost:3000`.
 
-Build the application for production:
+## Build
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+## Deploy (Producao)
+
+### Pre-requisitos
+
+- Servidor Linux com Docker instalado
+- Dominio apontando para o IP do servidor (registros A para `jfernando.dev` e `www.jfernando.dev`)
+- Portas 80 e 443 liberadas no firewall
+
+### Subir
 
 ```bash
-# npm
-npm run preview
+# Primeira vez — gera certificado SSL e sobe tudo
+bash init-ssl.sh
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+# Atualizacoes
+git pull && docker compose up -d --build
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Arquitetura
+
+```
+Cliente -> Nginx (80/443) -> Node.js container (3000)
+                |
+          Let's Encrypt (renovacao automatica a cada 12h)
+```
+
+## Estrutura
+
+```
+app/
+  components/     # NavBar, HeroSection, AboutSection, ExperienceSection,
+                  # TechStackSection, EducationSection, ContactSection
+  composables/    # useScrollReveal, useTypingEffect, useCounter,
+                  # useMouseParallax, useScrollProgress
+  assets/css/     # main.css (tema, animacoes, reveal classes)
+  pages/          # index.vue
+Dockerfile        # Multi-stage build (deps -> build -> production)
+docker-compose.yml
+nginx.conf        # Reverse proxy + SSL + cache de assets
+init-ssl.sh       # Setup inicial do Let's Encrypt
+```
+
+## Licenca
+
+MIT
