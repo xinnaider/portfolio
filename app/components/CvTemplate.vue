@@ -111,3 +111,124 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.cv-template {
+  width: 794px;
+  min-height: 1123px;
+  padding: 53px 60px;
+  background: white;
+  color: #111;
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cv-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #8b5cf6;
+}
+
+.cv-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+
+.cv-subtitle {
+  font-size: 15px;
+  color: #8b5cf6;
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.cv-contact {
+  font-size: 11px;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cv-section {
+  margin-bottom: 16px;
+}
+
+.cv-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.cv-section > p {
+  color: #333;
+  font-size: 12px;
+}
+
+.cv-entry {
+  margin-bottom: 12px;
+}
+
+.cv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 13px;
+}
+
+.cv-date {
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.cv-entry-desc {
+  font-size: 11px;
+  color: #666;
+  margin: 2px 0;
+}
+
+.cv-promotion {
+  font-size: 11px;
+  color: #8b5cf6;
+  font-weight: 600;
+  margin: 2px 0;
+}
+
+.cv-entry ul {
+  margin: 2px 0;
+  padding-left: 18px;
+}
+
+.cv-entry li {
+  font-size: 11.5px;
+  color: #333;
+  margin-bottom: 1px;
+}
+
+.cv-tags {
+  font-size: 10px;
+  color: #8b5cf6;
+  margin-top: 2px;
+}
+
+.cv-tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+  font-size: 11.5px;
+  color: #333;
+}
+</style>
