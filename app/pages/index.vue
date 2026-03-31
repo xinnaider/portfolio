@@ -12,7 +12,6 @@ const { progress } = useScrollProgress()
   <div>
     <a href="#sobre" class="skip-to-content">Pular para o conteúdo</a>
 
-    <!-- Scroll progress bar -->
     <div
       class="scroll-progress"
       :style="{ width: `${progress * 100}%` }"

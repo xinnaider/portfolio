@@ -7,7 +7,6 @@ const { download, isGenerating } = useDownloadCv()
 
 <template>
   <section class="relative min-h-dvh bg-surface-black flex items-center overflow-hidden">
-    <!-- Animated gradient orb following mouse -->
     <div
       class="absolute w-[600px] h-[600px] rounded-full opacity-[0.07] blur-[120px] pointer-events-none"
       :style="{
@@ -18,7 +17,6 @@ const { download, isGenerating } = useDownloadCv()
       }"
     />
 
-    <!-- Second orb -->
     <div
       class="absolute w-[400px] h-[400px] rounded-full opacity-[0.04] blur-[100px] pointer-events-none"
       :style="{
@@ -29,7 +27,6 @@ const { download, isGenerating } = useDownloadCv()
       }"
     />
 
-    <!-- Background texture text with parallax -->
     <div
       class="absolute right-[-40px] font-display font-extrabold text-[40px] sm:text-[80px] md:text-[120px] lg:text-[200px] text-white/[0.03] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(50% + ${scrollY * -0.15}px)`, transform: 'translateY(-50%)' }"
@@ -37,13 +34,11 @@ const { download, isGenerating } = useDownloadCv()
       DEVELOPER
     </div>
 
-    <!-- Grid pattern overlay -->
     <div
       class="absolute inset-0 opacity-[0.03] pointer-events-none"
       style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"
     />
 
-    <!-- Floating geometric shapes with mouse + scroll parallax -->
     <div
       class="absolute top-[12%] left-[8%] w-12 md:w-20 h-12 md:h-20 border border-white/[0.06] rounded-full"
       :style="{ transform: `translate(${mouseX * 15}px, ${scrollY * 0.08 + mouseY * 10}px)` }"
@@ -69,7 +64,6 @@ const { download, isGenerating } = useDownloadCv()
       :style="{ transform: `translate(${mouseX * 20}px, ${scrollY * 0.04 + mouseY * 12}px)` }"
       style="animation: float-1 4s ease-in-out infinite; animation-name: pulse-glow, float-1;"
     />
-    <!-- SVG rotating ring -->
     <svg
       class="hidden md:block absolute top-[40%] left-[5%] w-24 h-24 opacity-[0.04]"
       :style="{ transform: `translate(${mouseX * 10}px, ${mouseY * 8}px)` }"
@@ -78,7 +72,6 @@ const { download, isGenerating } = useDownloadCv()
     >
       <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="8 4" />
     </svg>
-    <!-- Cross shape -->
     <div
       class="hidden md:block absolute bottom-[15%] right-[25%] opacity-[0.06]"
       :style="{ transform: `translate(${mouseX * -8}px, ${mouseY * 6}px)` }"
@@ -88,7 +81,6 @@ const { download, isGenerating } = useDownloadCv()
       <div class="w-[1px] h-8 bg-white absolute left-1/2 top-0" />
     </div>
 
-    <!-- Content -->
     <div class="relative z-10 max-w-6xl mx-auto px-6 pt-28 md:pt-32 pb-20 w-full">
       <p class="text-accent font-sans font-semibold text-xs sm:text-sm tracking-[2px] sm:tracking-[4px] uppercase mb-4">
         Full Stack Developer
@@ -102,7 +94,6 @@ const { download, isGenerating } = useDownloadCv()
         />
       </h1>
 
-      <!-- Accent line -->
       <div
         v-if="isComplete"
         class="h-[3px] bg-accent mt-6"
@@ -113,7 +104,6 @@ const { download, isGenerating } = useDownloadCv()
         Construo sistemas que escalam e entrego o que funciona — do microsserviço ao frontend, da arquitetura ao deploy.
       </p>
 
-      <!-- Info row below -->
       <div class="flex flex-col sm:flex-row gap-6 sm:gap-12 mt-10">
         <div>
           <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[2px] sm:tracking-[3px] mb-1">Localização</p>
@@ -146,7 +136,6 @@ const { download, isGenerating } = useDownloadCv()
       </div>
     </div>
 
-    <!-- Scroll indicator -->
     <div class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
       <span class="text-text-muted-dark text-xs tracking-widest uppercase">Scroll</span>
       <div

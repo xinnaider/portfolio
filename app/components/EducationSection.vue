@@ -4,7 +4,6 @@ const { scrollY } = useScrollProgress()
 
 <template>
   <section id="formacao" class="relative bg-surface-black py-16 sm:py-24 lg:py-36 overflow-hidden">
-    <!-- Background texture -->
     <div
       class="absolute right-[-20px] font-display font-extrabold text-[40px] sm:text-[80px] lg:text-[140px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(40% + ${scrollY * -0.03}px)` }"
@@ -12,7 +11,6 @@ const { scrollY } = useScrollProgress()
       FORMAÇÃO
     </div>
 
-    <!-- Floating element -->
     <div
       class="hidden lg:block absolute top-[20%] right-[10%] w-20 h-20 border border-accent/[0.06] rotate-45"
       :style="{ transform: `translateY(${scrollY * -0.04}px) rotate(45deg)` }"
@@ -20,7 +18,6 @@ const { scrollY } = useScrollProgress()
     />
 
     <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <!-- Section header -->
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
         <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Educação</p>
@@ -31,7 +28,6 @@ const { scrollY } = useScrollProgress()
       </h2>
 
       <div class="space-y-6 max-w-2xl">
-        <!-- Cruzeiro do Sul — atual -->
         <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="1">
           <div class="flex items-start gap-3 sm:gap-6">
             <div class="hidden sm:flex w-14 h-14 rounded-xl bg-accent/10 items-center justify-center flex-shrink-0">
@@ -56,7 +52,6 @@ const { scrollY } = useScrollProgress()
           </div>
         </div>
 
-        <!-- IFRO — anterior -->
         <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="2">
           <div class="flex items-start gap-3 sm:gap-6">
             <div class="hidden sm:flex w-14 h-14 rounded-xl bg-white/[0.05] items-center justify-center flex-shrink-0">
@@ -75,7 +70,6 @@ const { scrollY } = useScrollProgress()
             </div>
           </div>
         </div>
-        <!-- Ensino Médio Técnico -->
         <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="3">
           <div class="flex items-start gap-3 sm:gap-6">
             <div class="hidden sm:flex w-14 h-14 rounded-xl bg-white/[0.05] items-center justify-center flex-shrink-0">

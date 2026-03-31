@@ -48,7 +48,6 @@ onUnmounted(() => {
         jfernando<span class="text-accent">.dev</span>
       </a>
 
-      <!-- Desktop -->
       <div class="hidden md:flex items-center gap-8">
         <a
           v-for="link in links"
@@ -67,7 +66,6 @@ onUnmounted(() => {
         </button>
       </div>
 
-      <!-- Mobile hamburger -->
       <button
         class="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
         aria-label="Abrir menu"
@@ -88,7 +86,6 @@ onUnmounted(() => {
       </button>
     </div>
 
-    <!-- Mobile menu -->
     <Transition
       enter-active-class="transition-all duration-300 ease-out"
       enter-from-class="opacity-0 -translate-y-4"

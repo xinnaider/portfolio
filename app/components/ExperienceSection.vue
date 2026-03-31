@@ -52,7 +52,6 @@ const experiences = [
 
 <template>
   <section id="experiencia" class="relative bg-surface-dark py-16 sm:py-24 lg:py-36 overflow-hidden">
-    <!-- Background texture with parallax -->
     <div
       class="absolute left-[-20px] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(50% + ${scrollY * -0.08}px)`, transform: 'translateY(-50%)' }"
@@ -60,7 +59,6 @@ const experiences = [
       EXPERIÊNCIA
     </div>
 
-    <!-- Floating accent elements -->
     <div
       class="hidden lg:block absolute top-[10%] right-[5%] w-32 h-32 border border-accent/[0.06] rounded-full"
       :style="{ transform: `translateY(${scrollY * -0.05}px)` }"
@@ -73,7 +71,6 @@ const experiences = [
     />
 
     <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <!-- Section header -->
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
         <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Trajetória</p>
@@ -83,9 +80,7 @@ const experiences = [
         EXPERIÊNCIA
       </h2>
 
-      <!-- Timeline -->
       <div class="relative">
-        <!-- Vertical line -->
         <div class="absolute left-0 lg:left-8 top-0 bottom-0 w-[1px] bg-gradient-to-b from-accent/50 via-accent/20 to-transparent" />
 
         <div class="space-y-8 sm:space-y-12 lg:space-y-16">
@@ -94,12 +89,10 @@ const experiences = [
             :key="exp.company"
             class="relative pl-6 sm:pl-8 lg:pl-20"
           >
-            <!-- Timeline dot with pulse -->
             <div class="absolute left-0 lg:left-8 top-2 -translate-x-1/2 z-10">
               <div class="reveal-scale w-4 h-4 rounded-full bg-accent" :data-stagger="index" style="animation: pulse-glow 3s ease-in-out infinite" />
             </div>
 
-            <!-- Period badge -->
             <div
               class="reveal inline-block px-3 py-1 rounded-full text-xs font-semibold text-accent border border-accent/30 mb-4"
               :data-stagger="index"
@@ -107,7 +100,6 @@ const experiences = [
               {{ exp.period }}
             </div>
 
-            <!-- Card -->
             <div
               class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 hover:border-accent/20 transition-all duration-300"
               :data-stagger="index"
@@ -131,7 +123,6 @@ const experiences = [
                 </li>
               </ul>
 
-              <!-- Promotion timeline -->
               <div v-if="exp.promotion" class="flex items-center gap-2 sm:gap-3 my-4 sm:my-5 py-2 sm:py-3 px-3 sm:px-4 rounded-lg bg-accent/[0.06] border border-accent/15">
                 <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">{{ exp.promotion.from }}</span>
                 <div class="flex items-center gap-1.5 flex-1">
@@ -142,7 +133,6 @@ const experiences = [
                 <span class="text-accent text-xs font-semibold uppercase tracking-wider">{{ exp.promotion.to }}</span>
               </div>
 
-              <!-- Tech tags -->
               <div class="flex flex-wrap gap-2 pt-4 border-t border-white/[0.08]">
                 <span
                   v-for="tag in exp.tags"

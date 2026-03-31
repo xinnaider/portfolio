@@ -6,7 +6,6 @@ export const useDownloadCv = () => {
     isGenerating.value = true
 
     try {
-      // Create hidden iframe
       const iframe = document.createElement('iframe')
       iframe.style.position = 'fixed'
       iframe.style.left = '-9999px'
@@ -133,7 +132,6 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
 </body></html>`)
       doc.close()
 
-      // Wait for fonts to fully load
       await iframe.contentWindow!.document.fonts.ready
       await new Promise(r => setTimeout(r, 300))
 

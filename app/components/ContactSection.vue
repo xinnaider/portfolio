@@ -4,7 +4,6 @@ const { mouseX, mouseY } = useMouseParallax()
 
 <template>
   <section id="contato" class="relative bg-surface-white py-16 sm:py-24 lg:py-36 overflow-hidden">
-    <!-- Decorative gradient orb -->
     <div
       class="absolute w-[400px] h-[400px] rounded-full opacity-[0.06] blur-[100px] pointer-events-none"
       :style="{
@@ -16,7 +15,6 @@ const { mouseX, mouseY } = useMouseParallax()
     />
 
     <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <!-- Section header -->
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
         <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Contato</p>
@@ -59,7 +57,6 @@ const { mouseX, mouseY } = useMouseParallax()
         </p>
       </div>
 
-      <!-- Footer -->
       <div class="reveal mt-16 sm:mt-24 pt-6 sm:pt-8 border-t border-border-light flex flex-col sm:flex-row justify-between items-center gap-4" data-stagger="4">
         <p class="text-text-muted text-sm">
           &copy; {{ new Date().getFullYear() }} José Fernando Gomes Marcial
