@@ -133,19 +133,23 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
 </body></html>`)
       doc.close()
 
-      // Wait for fonts to load
-      await new Promise(r => setTimeout(r, 1000))
+      // Wait for fonts to fully load
+      await iframe.contentWindow!.document.fonts.ready
+      await new Promise(r => setTimeout(r, 300))
 
       const html2canvas = (await import('html2canvas')).default
       const { jsPDF } = await import('jspdf')
 
       const cvEl = doc.querySelector('.cv') as HTMLElement
       const canvas = await html2canvas(cvEl, {
-        scale: 4,
+        scale: 5,
         useCORS: true,
         backgroundColor: '#ffffff',
         width: 794,
-        height: 1123
+        height: 1123,
+        logging: false,
+        imageTimeout: 0,
+        removeContainer: false
       })
 
       document.body.removeChild(iframe)
@@ -153,10 +157,11 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
-        format: 'a4'
+        format: 'a4',
+        compress: true
       })
 
-      pdf.addImage(canvas.toDataURL('image/png', 1.0), 'PNG', 0, 0, 210, 297, undefined, 'FAST')
+      pdf.addImage(canvas.toDataURL('image/png', 1.0), 'PNG', 0, 0, 210, 297, undefined, 'NONE')
       pdf.save('Jose-Fernando-CV.pdf')
     } finally {
       isGenerating.value = false
