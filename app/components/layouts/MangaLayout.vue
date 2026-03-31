@@ -55,17 +55,17 @@
 
 .manga-cell--about {
   grid-row: 1 / 3;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .manga-cell--experience {
   grid-row: 1 / 2;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .manga-cell--tech {
   grid-row: 2 / 3;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* Row 3: 2 equal columns */
@@ -77,7 +77,7 @@
 }
 
 .manga-cell {
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* Mobile: stacked, each section is its own snap point */
@@ -102,7 +102,7 @@
     grid-row: unset;
     height: 100vh;
     scroll-snap-align: start;
-    overflow-y: auto;
+    overflow: hidden;
   }
 
   .manga-row:first-child {
