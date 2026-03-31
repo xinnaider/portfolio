@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: xinnaider/portfolio
+  IMAGE_NAME: ${{ github.repository_owner }}/portfolio
 
 jobs:
   build-and-push:
