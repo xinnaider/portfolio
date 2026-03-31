@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     defaultLocale: 'pt-BR',
     strategy: 'prefix_except_default',
     lazy: true,
-    langDir: 'locales/',
+    langDir: '../app/locales/',
     detectBrowserLanguage: false,
   },
 
