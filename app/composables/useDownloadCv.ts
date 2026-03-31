@@ -26,7 +26,7 @@ export const useDownloadCv = () => {
 <html>
 <head>
 <meta charset="utf-8">
-<title>José Fernando — CV</title>
+<title>Jose-Fernando-CV</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,9 +40,40 @@ export const useDownloadCv = () => {
   }
 
   body {
-    background: white;
+    background: #f0f0f0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .cv-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .cv-actions button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .cv-actions button:hover { opacity: 0.85; }
+
+  .btn-download {
+    background: #8b5cf6;
+    color: white;
+  }
+
+  .btn-back {
+    background: #333;
+    color: white;
   }
 
   .cv-template {
@@ -54,6 +85,7 @@ export const useDownloadCv = () => {
     font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
     font-size: 9.5pt;
     line-height: 1.45;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   }
 
   .cv-header {
@@ -167,23 +199,23 @@ export const useDownloadCv = () => {
   }
 
   @media print {
-    body { background: white; }
-    .cv-template { padding: 14mm 16mm; }
+    body { background: white; padding: 0; }
+    .cv-actions { display: none; }
+    .cv-template { box-shadow: none; padding: 14mm 16mm; }
   }
 </style>
 </head>
-<body>${html}</body>
+<body>
+  <div class="cv-actions">
+    <button class="btn-download" onclick="window.print()">Salvar como PDF</button>
+    <button class="btn-back" onclick="window.close()">Voltar</button>
+  </div>
+  ${html}
+</body>
 </html>`)
 
     printWindow.document.close()
-
-    // Wait for fonts to load then print
-    printWindow.onload = () => {
-      setTimeout(() => {
-        printWindow.print()
-        isGenerating.value = false
-      }, 500)
-    }
+    isGenerating.value = false
   }
 
   return { download, isGenerating }
