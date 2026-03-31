@@ -12,7 +12,7 @@ useHead({
   ]
 })
 
-useScrollReveal()
+const { observeNew } = useScrollReveal()
 
 const { progress } = useScrollProgress()
 const { theme } = useTheme()
@@ -21,10 +21,10 @@ const currentLayout = computed(() =>
   theme.value === Theme.MANGA ? MangaLayout : VioletLayout
 )
 
-// Re-initialize scroll reveal after layout swap so new .reveal elements are observed
+// Re-observe .reveal elements after layout swap so new DOM nodes are picked up
 watch(theme, async () => {
   await nextTick()
-  useScrollReveal()
+  observeNew()
 })
 </script>
 
