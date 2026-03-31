@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { tm } = useI18n()
+
 const yearsCounter = useCounter(4, 2000)
 const companiesCounter = useCounter(3, 2000)
 const languagesCounter = useCounter(6, 2000)
@@ -13,7 +15,7 @@ onMounted(() => {
           yearsCounter.animate()
           companiesCounter.animate()
           languagesCounter.animate()
-observer.unobserve(entry.target)
+          observer.unobserve(entry.target)
         }
       })
     },
@@ -25,45 +27,35 @@ observer.unobserve(entry.target)
   }
 })
 
-const highlights = [
-  { title: 'Backend Robusto', desc: 'APIs REST, microsserviços com Spring Boot, .NET e Nest.js. Comunicação assíncrona com RabbitMQ.' },
-  { title: 'Frontend Moderno', desc: 'Interfaces reativas com Vue.js e Next.js. Experiência com Electron para apps desktop.' },
-  { title: 'Infraestrutura', desc: 'Docker, DevOps, integração com dispositivos via SNMP e LwM2M. Sistemas de alta disponibilidade.' },
-  { title: 'Dados em Escala', desc: 'Migração de bancos 4TB+, web scraping automatizado, processamento de documentos fiscais em larga escala.' },
-  { title: 'Desenvolvimento com IA', desc: 'Uso de agentes de IA (Claude Code, Cursor) para acelerar entregas, code review automatizado e orquestração de tarefas paralelas com multi-agents.' }
-]
+const highlights = computed(() => tm('about.highlights') as Array<{ title: string, desc: string }>)
 </script>
 
 <template>
   <section id="sobre" class="relative bg-surface-white py-16 sm:py-24 lg:py-36 overflow-hidden">
     <div class="absolute right-[-30px] top-[20%] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-black/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none">
-      SOBRE
+      {{ $t('about.backgroundText') }}
     </div>
 
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
-        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Quem sou</p>
+        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">{{ $t('about.label') }}</p>
       </div>
 
       <h2 class="reveal font-display font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-8 sm:mb-12">
-        SOBRE
+        {{ $t('about.title') }}
       </h2>
 
       <div class="grid lg:grid-cols-2 gap-8 sm:gap-16">
         <div>
           <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed" data-stagger="1">
-            Sou apaixonado por tecnologia desde cedo — comecei a explorar computadores ainda na infância
-            e desde então mantenho uma forte curiosidade por entender como sistemas e tecnologias funcionam.
+            {{ $t('about.bio1') }}
           </p>
           <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="2">
-            Desenvolvi um perfil autodidata, sempre buscando aprender na prática, testar soluções e
-            aprofundar conhecimentos. Gosto de resolver problemas complexos, enfrentar desafios técnicos
-            e trabalhar em ambientes que incentivem aprendizado contínuo e evolução profissional.
+            {{ $t('about.bio2') }}
           </p>
           <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="3">
-            Tenho experiência com sistemas de alto volume de dados, arquiteturas de microsserviços e
-            integração com dispositivos IoT usando protocolos especializados como SNMP e LwM2M.
+            {{ $t('about.bio3') }}
           </p>
         </div>
 
@@ -74,15 +66,15 @@ const highlights = [
           >
             <div class="reveal border-l-2 border-accent pl-3 sm:pl-6" data-stagger="1">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">+{{ yearsCounter.count.value }}</span>
-              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">Anos de experiência</p>
+              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">{{ $t('about.yearsLabel') }}</p>
             </div>
             <div class="reveal border-l-2 border-black/10 pl-3 sm:pl-6" data-stagger="2">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">{{ companiesCounter.count.value }}</span>
-              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">Empresas</p>
+              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">{{ $t('about.companiesLabel') }}</p>
             </div>
             <div class="reveal border-l-2 border-black/10 pl-3 sm:pl-6" data-stagger="3">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">{{ languagesCounter.count.value }}+</span>
-              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">Linguagens</p>
+              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">{{ $t('about.languagesLabel') }}</p>
             </div>
           </div>
         </div>
@@ -91,7 +83,7 @@ const highlights = [
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mt-12 sm:mt-20">
         <div
           v-for="(item, index) in highlights"
-          :key="item.title"
+          :key="index"
           class="reveal-scale group p-4 sm:p-6 bg-white border border-border-light rounded-xl hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
           :data-stagger="index + 1"
         >
