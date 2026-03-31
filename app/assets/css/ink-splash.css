@@ -14,11 +14,13 @@
 }
 
 .ink-blob {
-  will-change: r;
+  transform-origin: center;
+  transform-box: fill-box;
+  will-change: transform;
 }
 
 .ink-blob.growing {
-  animation: inkGrow 400ms var(--ink-delay, 0ms) cubic-bezier(0.4, 0, 1, 1) forwards;
+  animation: inkGrow 400ms var(--ink-delay, 0ms) cubic-bezier(0.4, 0, 1, 1) both;
 }
 
 .ink-blob.shrinking {
@@ -26,13 +28,13 @@
 }
 
 @keyframes inkGrow {
-  from { r: 0; }
-  to { r: 200vmax; }
+  from { transform: scale(0); }
+  to { transform: scale(1); }
 }
 
 @keyframes inkShrink {
-  from { r: 200vmax; }
-  to { r: 0; }
+  from { transform: scale(1); }
+  to { transform: scale(0); }
 }
 
 /* Reduced motion: simple fade */

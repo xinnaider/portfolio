@@ -25,7 +25,7 @@ watch(isInkSplashing, (val) => {
 
 <template>
   <div
-    v-if="isInkSplashing"
+    v-show="phase !== 'idle'"
     class="ink-splash-overlay"
     :class="{ 'reduced-motion': prefersReducedMotion }"
   >
@@ -37,7 +37,7 @@ watch(isInkSplashing, (val) => {
         :class="phase === 'growing' ? 'growing' : phase === 'shrinking' ? 'shrinking' : ''"
         :cx="blob.cx"
         :cy="blob.cy"
-        r="0"
+        r="80"
         fill="#000"
         :style="{ '--ink-delay': `${blob.delay}ms` }"
       />
