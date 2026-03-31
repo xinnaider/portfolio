@@ -25,7 +25,7 @@ const categories = [
   <section id="tech" class="relative bg-surface-light py-24 lg:py-36 overflow-hidden">
     <!-- Background texture -->
     <div
-      class="absolute left-[-20px] font-display font-extrabold text-[100px] lg:text-[160px] text-black/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
+      class="absolute left-[-20px] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-black/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(30% + ${scrollY * -0.04}px)` }"
     >
       STACK
@@ -46,7 +46,7 @@ const categories = [
         Tecnologias que utilizo no dia a dia para construir soluções robustas e escaláveis.
       </p>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
         <div
           v-for="(category, catIndex) in categories"
           :key="category.label"
@@ -88,27 +88,27 @@ const categories = [
     <div class="mt-20 overflow-hidden border-t border-b border-border-light py-4">
       <div class="flex whitespace-nowrap" style="animation: marquee 30s linear infinite">
         <span v-for="n in 2" :key="n" class="flex gap-8 mr-8">
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">JAVA</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">JAVA</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">SPRING BOOT</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">SPRING BOOT</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">VUE.JS</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">VUE.JS</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">DOCKER</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">DOCKER</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">RABBITMQ</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">RABBITMQ</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">.NET</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">.NET</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">LARAVEL</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">LARAVEL</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">NEXT.JS</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">NEXT.JS</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">PYTHON</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">PYTHON</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">NEST.JS</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">NEST.JS</span>
           <span class="text-accent/20">•</span>
-          <span class="text-black/10 font-display font-extrabold text-2xl tracking-tight">MICROSERVICES</span>
+          <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">MICROSERVICES</span>
           <span class="text-accent/20">•</span>
         </span>
       </div>

@@ -7,6 +7,7 @@ const links = [
 ]
 
 const isScrolled = ref(false)
+const isMenuOpen = ref(false)
 let ticking = false
 
 const onScroll = () => {
@@ -17,6 +18,14 @@ const onScroll = () => {
     })
     ticking = true
   }
+}
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false
 }
 
 onMounted(() => {
@@ -38,16 +47,64 @@ onUnmounted(() => {
         jfernando<span class="text-accent">.dev</span>
       </a>
 
-      <div class="flex items-center gap-6 md:gap-8">
+      <!-- Desktop -->
+      <div class="hidden md:flex items-center gap-8">
         <a
           v-for="link in links"
           :key="link.href"
           :href="link.href"
-          class="text-xs md:text-sm text-text-muted hover:text-accent transition-colors duration-200 py-2 px-1"
+          class="text-sm text-text-muted hover:text-accent transition-colors duration-200 py-2 px-1"
         >
           {{ link.label }}
         </a>
       </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        class="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+        aria-label="Abrir menu"
+        @click="toggleMenu"
+      >
+        <span
+          class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center"
+          :class="isMenuOpen ? 'rotate-45 translate-y-2' : ''"
+        />
+        <span
+          class="block w-6 h-0.5 bg-white transition-all duration-300"
+          :class="isMenuOpen ? 'opacity-0' : ''"
+        />
+        <span
+          class="block w-6 h-0.5 bg-white transition-all duration-300 origin-center"
+          :class="isMenuOpen ? '-rotate-45 -translate-y-2' : ''"
+        />
+      </button>
     </div>
+
+    <!-- Mobile menu -->
+    <Transition
+      enter-active-class="transition-all duration-300 ease-out"
+      enter-from-class="opacity-0 -translate-y-4"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-200 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-4"
+    >
+      <div
+        v-show="isMenuOpen"
+        class="md:hidden bg-surface-black/95 backdrop-blur-md border-b border-border-dark"
+      >
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+          <a
+            v-for="link in links"
+            :key="link.href"
+            :href="link.href"
+            class="text-base text-text-muted hover:text-accent transition-colors duration-200 py-2"
+            @click="closeMenu"
+          >
+            {{ link.label }}
+          </a>
+        </div>
+      </div>
+    </Transition>
   </nav>
 </template>

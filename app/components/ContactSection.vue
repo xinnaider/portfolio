@@ -22,7 +22,7 @@ const { mouseX, mouseY } = useMouseParallax()
         <p class="reveal text-accent text-sm font-semibold uppercase tracking-[4px]">Contato</p>
       </div>
 
-      <h2 class="reveal font-display font-extrabold text-5xl md:text-6xl lg:text-8xl text-black tracking-tighter leading-[0.9]">
+      <h2 class="reveal font-display font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-8xl text-black tracking-tighter leading-[0.9]">
         VAMOS<br>
         <span class="gradient-text">CONVERSAR</span>
       </h2>

@@ -36,7 +36,7 @@ const highlights = [
 <template>
   <section id="sobre" class="relative bg-surface-white py-24 lg:py-36 overflow-hidden">
     <!-- Background texture -->
-    <div class="absolute right-[-30px] top-[20%] font-display font-extrabold text-[100px] lg:text-[160px] text-black/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none">
+    <div class="absolute right-[-30px] top-[20%] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-black/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none">
       SOBRE
     </div>
 
@@ -73,18 +73,18 @@ const highlights = [
         <div>
           <div
             ref="countersRef"
-            class="grid grid-cols-3 gap-8"
+            class="grid grid-cols-3 gap-4 sm:gap-8"
           >
-            <div class="reveal border-l-2 border-accent pl-6" data-stagger="1">
-              <span class="font-display font-extrabold text-5xl lg:text-6xl text-black">+{{ yearsCounter.count.value }}</span>
+            <div class="reveal border-l-2 border-accent pl-3 sm:pl-6" data-stagger="1">
+              <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">+{{ yearsCounter.count.value }}</span>
               <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Anos de experiência</p>
             </div>
-            <div class="reveal border-l-2 border-black/10 pl-6" data-stagger="2">
-              <span class="font-display font-extrabold text-5xl lg:text-6xl text-black">{{ companiesCounter.count.value }}</span>
+            <div class="reveal border-l-2 border-black/10 pl-3 sm:pl-6" data-stagger="2">
+              <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">{{ companiesCounter.count.value }}</span>
               <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Empresas</p>
             </div>
-            <div class="reveal border-l-2 border-black/10 pl-6" data-stagger="3">
-              <span class="font-display font-extrabold text-5xl lg:text-6xl text-black">{{ languagesCounter.count.value }}+</span>
+            <div class="reveal border-l-2 border-black/10 pl-3 sm:pl-6" data-stagger="3">
+              <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">{{ languagesCounter.count.value }}+</span>
               <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Linguagens</p>
             </div>
           </div>

@@ -30,7 +30,7 @@ const { mouseX, mouseY } = useMouseParallax()
 
     <!-- Background texture text with parallax -->
     <div
-      class="absolute right-[-40px] font-display font-extrabold text-[80px] md:text-[120px] lg:text-[200px] text-white/[0.03] tracking-tighter whitespace-nowrap select-none pointer-events-none"
+      class="absolute right-[-40px] font-display font-extrabold text-[40px] sm:text-[80px] md:text-[120px] lg:text-[200px] text-white/[0.03] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(50% + ${scrollY * -0.15}px)`, transform: 'translateY(-50%)' }"
     >
       DEVELOPER

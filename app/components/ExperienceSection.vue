@@ -54,7 +54,7 @@ const experiences = [
   <section id="experiencia" class="relative bg-surface-dark py-24 lg:py-36 overflow-hidden">
     <!-- Background texture with parallax -->
     <div
-      class="absolute left-[-20px] font-display font-extrabold text-[100px] lg:text-[160px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
+      class="absolute left-[-20px] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(50% + ${scrollY * -0.08}px)`, transform: 'translateY(-50%)' }"
     >
       EXPERIÊNCIA

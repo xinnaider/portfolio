@@ -6,7 +6,7 @@ const { scrollY } = useScrollProgress()
   <section id="formacao" class="relative bg-surface-black py-24 lg:py-36 overflow-hidden">
     <!-- Background texture -->
     <div
-      class="absolute right-[-20px] font-display font-extrabold text-[80px] lg:text-[140px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
+      class="absolute right-[-20px] font-display font-extrabold text-[40px] sm:text-[80px] lg:text-[140px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(40% + ${scrollY * -0.03}px)` }"
     >
       FORMAÇÃO
