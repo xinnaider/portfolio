@@ -9,51 +9,63 @@ Construido com Nuxt 4, Tailwind CSS v4, e animacoes customizadas (typing effect,
 - **Framework:** Nuxt 4 (Vue 3 + Nitro)
 - **Estilos:** Tailwind CSS v4
 - **Tipografia:** Syne + Space Grotesk (Google Fonts)
+- **CI/CD:** GitHub Actions + GitHub Container Registry
 - **Deploy:** Docker + Nginx + Let's Encrypt
 
 ## Desenvolvimento
 
 ```bash
-# Instalar dependencias
 pnpm install
-
-# Servidor de desenvolvimento
 pnpm dev
 ```
 
 Acesse `http://localhost:3000`.
 
-## Build
+## CI/CD
 
-```bash
-pnpm build
+O pipeline roda automaticamente a cada push:
+
+| Workflow | Trigger | O que faz |
+|----------|---------|-----------|
+| **CI** | Push/PR em `main` | Lint + Typecheck |
+| **Deploy** | Push em `main` | Build image → Push ghcr.io → Deploy via SSH |
+
+```
+Push na main
+  -> CI: lint + typecheck
+  -> Deploy: build Docker image
+       -> Push para ghcr.io/fernandonepen/portfolio:latest
+       -> SSH no servidor: docker compose pull && up -d
 ```
 
-## Deploy (Producao)
+## Setup do Servidor (primeira vez)
 
 ### Pre-requisitos
 
 - Servidor Linux com Docker instalado
-- Dominio apontando para o IP do servidor (registros A para `jfernando.dev` e `www.jfernando.dev`)
-- Portas 80 e 443 liberadas no firewall
+- DNS: registros A para `jfernando.dev` e `www.jfernando.dev` apontando para o IP
+- Portas 80, 443 e 22 liberadas
 
-### Subir
+### Secrets do GitHub
+
+Configure em **Settings > Secrets and variables > Actions**:
+
+| Secret | Valor |
+|--------|-------|
+| `SERVER_HOST` | IP do servidor |
+| `SERVER_USER` | Usuario SSH (ex: `root`) |
+| `SERVER_SSH_KEY` | Chave privada SSH |
+
+### Setup inicial
 
 ```bash
-# Primeira vez — gera certificado SSL e sobe tudo
+# No servidor
+git clone https://github.com/fernandonepen/portfolio.git ~/portfolio
+cd ~/portfolio
 bash init-ssl.sh
-
-# Atualizacoes
-git pull && docker compose up -d --build
 ```
 
-### Arquitetura
-
-```
-Cliente -> Nginx (80/443) -> Node.js container (3000)
-                |
-          Let's Encrypt (renovacao automatica a cada 12h)
-```
+A partir dai, cada push na `main` faz deploy automatico.
 
 ## Estrutura
 
@@ -65,6 +77,9 @@ app/
                   # useMouseParallax, useScrollProgress
   assets/css/     # main.css (tema, animacoes, reveal classes)
   pages/          # index.vue
+.github/workflows/
+  ci.yml          # Lint + Typecheck
+  deploy.yml      # Build image + push + deploy SSH
 Dockerfile        # Multi-stage build (deps -> build -> production)
 docker-compose.yml
 nginx.conf        # Reverse proxy + SSL + cache de assets

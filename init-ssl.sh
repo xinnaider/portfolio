@@ -1,16 +1,17 @@
 #!/bin/bash
-# Script para gerar o primeiro certificado SSL com Let's Encrypt
-# Execute uma vez no servidor antes de usar o docker-compose completo
-
+# Setup inicial do servidor — execute uma vez
 set -e
 
 DOMAIN="jfernando.dev"
 EMAIL="josefernandogmarcial@gmail.com"
 
-echo "==> Subindo nginx temporário (só HTTP)..."
-docker compose up -d nginx
+echo "==> Fazendo pull da imagem..."
+docker compose pull portfolio
 
-echo "==> Gerando certificado para $DOMAIN..."
+echo "==> Subindo nginx (HTTP only)..."
+docker compose up -d nginx portfolio
+
+echo "==> Gerando certificado SSL..."
 docker compose run --rm certbot certonly \
   --webroot \
   -w /var/www/certbot \
@@ -20,10 +21,7 @@ docker compose run --rm certbot certonly \
   --agree-tos \
   --no-eff-email
 
-echo "==> Reiniciando nginx com HTTPS..."
-docker compose restart nginx
-
-echo "==> Subindo todos os serviços..."
+echo "==> Reiniciando com HTTPS..."
 docker compose up -d
 
-echo "==> Pronto! https://$DOMAIN deve estar funcionando."
+echo "==> Pronto! https://$DOMAIN"
