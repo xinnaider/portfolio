@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { tm } = useI18n()
+const { tm, rt } = useI18n()
 const { scrollY } = useScrollProgress()
 
 interface Promotion {
@@ -69,7 +69,7 @@ const experiences = computed(() => tm('experience.jobs') as Experience[])
               class="reveal inline-block px-3 py-1 rounded-full text-xs font-semibold text-accent border border-accent/30 mb-4"
               :data-stagger="index"
             >
-              {{ exp.period }}
+              {{ rt(exp.period) }}
             </div>
 
             <div
@@ -77,41 +77,41 @@ const experiences = computed(() => tm('experience.jobs') as Experience[])
               :data-stagger="index"
             >
               <div class="flex items-center gap-3 flex-wrap">
-                <h3 class="font-display font-bold text-lg sm:text-xl md:text-2xl text-white">{{ exp.company }}</h3>
+                <h3 class="font-display font-bold text-lg sm:text-xl md:text-2xl text-white">{{ rt(exp.company) }}</h3>
                 <span class="px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded-full border border-accent/40 text-accent bg-accent/10">
-                  {{ exp.badge }}
+                  {{ rt(exp.badge) }}
                 </span>
               </div>
-              <p class="text-accent text-xs sm:text-sm mt-1 font-semibold">{{ exp.role }}</p>
-              <p class="text-white/60 text-xs sm:text-[13px] mt-2 leading-relaxed">{{ exp.description }}</p>
+              <p class="text-accent text-xs sm:text-sm mt-1 font-semibold">{{ rt(exp.role) }}</p>
+              <p class="text-white/60 text-xs sm:text-[13px] mt-2 leading-relaxed">{{ rt(exp.description) }}</p>
 
               <ul class="space-y-3 mt-5 mb-6">
                 <li
-                  v-for="item in exp.items"
-                  :key="item"
+                  v-for="(item, itemIndex) in exp.items"
+                  :key="itemIndex"
                   class="text-white/80 text-xs sm:text-[15px] leading-relaxed pl-5 relative before:content-['▹'] before:absolute before:left-0 before:top-[2px] before:text-accent"
                 >
-                  {{ item }}
+                  {{ rt(item) }}
                 </li>
               </ul>
 
               <div v-if="exp.promotion" class="flex items-center gap-2 sm:gap-3 my-4 sm:my-5 py-2 sm:py-3 px-3 sm:px-4 rounded-lg bg-accent/[0.06] border border-accent/15">
-                <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">{{ exp.promotion.from }}</span>
+                <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">{{ rt(exp.promotion.from) }}</span>
                 <div class="flex items-center gap-1.5 flex-1">
                   <div class="h-[1px] flex-1 bg-accent/30" />
-                  <span class="text-accent text-[11px] font-semibold whitespace-nowrap">{{ exp.promotion.date }}</span>
+                  <span class="text-accent text-[11px] font-semibold whitespace-nowrap">{{ rt(exp.promotion.date) }}</span>
                   <div class="h-[1px] flex-1 bg-accent/30" />
                 </div>
-                <span class="text-accent text-xs font-semibold uppercase tracking-wider">{{ exp.promotion.to }}</span>
+                <span class="text-accent text-xs font-semibold uppercase tracking-wider">{{ rt(exp.promotion.to) }}</span>
               </div>
 
               <div class="flex flex-wrap gap-2 pt-4 border-t border-white/[0.08]">
                 <span
-                  v-for="tag in exp.tags"
-                  :key="tag"
+                  v-for="(tag, tagIndex) in exp.tags"
+                  :key="tagIndex"
                   class="px-3 py-1 text-xs rounded-full border border-white/15 text-white/60 hover:border-accent/40 hover:text-accent transition-colors duration-200"
                 >
-                  {{ tag }}
+                  {{ rt(tag) }}
                 </span>
               </div>
             </div>

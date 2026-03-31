@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { tm } = useI18n()
+const { tm, rt } = useI18n()
 const { scrollY } = useScrollProgress()
 
 interface EducationEntry {
@@ -54,26 +54,26 @@ const entries = computed(() => tm('education.entries') as EducationEntry[])
                 class="font-display font-bold text-lg"
                 :class="index === 0 ? 'text-accent' : 'text-white/60'"
               >
-                {{ entry.abbr }}
+                {{ rt(entry.abbr) }}
               </span>
             </div>
             <div>
               <div class="flex items-center gap-3 mb-1">
                 <p class="font-display font-bold text-base sm:text-xl md:text-2xl text-white">
-                  {{ entry.title }}
+                  {{ rt(entry.title) }}
                 </p>
               </div>
               <p
                 class="text-xs sm:text-sm font-semibold mt-1"
                 :class="index === 0 ? 'text-accent' : 'text-white/60'"
               >
-                {{ entry.institution }}
+                {{ rt(entry.institution) }}
               </p>
               <p class="text-white/60 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest mt-1">
-                {{ entry.status }}
+                {{ rt(entry.status) }}
               </p>
               <p v-if="entry.description" class="text-white/80 text-xs sm:text-[15px] mt-3 sm:mt-4 leading-relaxed">
-                {{ entry.description }}
+                {{ rt(entry.description) }}
               </p>
             </div>
           </div>

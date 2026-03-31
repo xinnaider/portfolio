@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { tm } = useI18n()
+const { tm, rt } = useI18n()
 
 const yearsCounter = useCounter(4, 2000)
 const companiesCounter = useCounter(3, 2000)
@@ -94,8 +94,8 @@ const highlights = computed(() => tm('about.highlights') as Array<{ title: strin
             <svg v-else-if="index === 3" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
             <svg v-else class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
           </div>
-          <h3 class="font-display font-bold text-sm sm:text-base text-black mb-2">{{ item.title }}</h3>
-          <p class="text-text-muted text-xs sm:text-sm leading-relaxed">{{ item.desc }}</p>
+          <h3 class="font-display font-bold text-sm sm:text-base text-black mb-2">{{ rt(item.title) }}</h3>
+          <p class="text-text-muted text-xs sm:text-sm leading-relaxed">{{ rt(item.desc) }}</p>
         </div>
       </div>
     </div>
