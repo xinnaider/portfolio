@@ -61,6 +61,10 @@ export default defineNuxtConfig({
       ],
       script: [
         {
+          innerHTML: "(function(){try{var t=localStorage.getItem('portfolio-theme');if(t==='manga')document.documentElement.setAttribute('data-theme','manga')}catch(e){}})()",
+          type: 'text/javascript',
+        },
+        {
           src: 'https://cloud.umami.is/script.js',
           defer: true,
           'data-website-id': 'a6f2c5dd-0d42-49e7-8ef3-4e35c3a9dd7f'
