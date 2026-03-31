@@ -1,74 +1,13 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const { mouseX, mouseY } = useMouseParallax()
-const { isManga } = useTheme()
 
 const currentYear = new Date().getFullYear()
 const copyright = computed(() => t('contact.copyright', { year: currentYear }))
 </script>
 
 <template>
-  <!-- MANGA CONTACT: Full-width dark panel, centered, speed lines -->
-  <section v-if="isManga" id="contato" class="relative bg-[#0a0a0a] overflow-hidden border-t-2 border-white">
-    <MangaSpeedLines direction="center" />
-    <MangaKanji text="バン!" position="top-left" size="sm" />
-    <MangaKanji text="ドン" position="bottom-right" size="sm" />
-
-    <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 sm:py-28 lg:py-36 text-center">
-      <div class="flex items-center justify-center gap-4 mb-6">
-        <div class="reveal w-12 h-[2px] bg-white" />
-        <p class="reveal text-white/50 text-xs font-semibold uppercase tracking-[4px]">{{ $t('contact.label') }}</p>
-        <div class="reveal w-12 h-[2px] bg-white" />
-      </div>
-
-      <h2 class="reveal font-display font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-8xl text-white tracking-tighter leading-[0.9]">
-        {{ $t('contact.title1') }}<br>
-        {{ $t('contact.title2') }}
-      </h2>
-
-      <p class="reveal text-white/50 text-sm sm:text-lg mt-6 sm:mt-8 max-w-lg mx-auto" data-stagger="1">
-        {{ $t('contact.description') }}
-      </p>
-
-      <div class="reveal flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 sm:mt-10 justify-center" data-stagger="2">
-        <a
-          href="https://linkedin.com/in/jfernandodev"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-3 px-6 py-4 bg-white text-black font-semibold text-sm sm:text-base transition-colors duration-300 hover:bg-white/80 border-2 border-white group"
-          :aria-label="$t('contact.linkedinAria')"
-        >
-          <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-
-        <a
-          href="https://jfernando.dev"
-          class="inline-flex items-center justify-center gap-3 px-6 py-4 border-2 border-white/40 text-white font-semibold text-sm sm:text-base transition-colors duration-300 hover:border-white hover:text-white"
-        >
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
-          jfernando.dev
-        </a>
-      </div>
-
-      <div class="reveal mt-6 sm:mt-8" data-stagger="3">
-        <p class="text-white/40 text-sm sm:text-base flex items-center justify-center gap-2">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-          {{ $t('contact.location') }}
-        </p>
-      </div>
-
-      <div class="reveal mt-16 sm:mt-24 pt-6 sm:pt-8 border-t-2 border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4" data-stagger="4">
-        <p class="text-white/30 text-sm">{{ copyright }}</p>
-        <p class="font-display font-bold text-sm text-white/15">
-          jfernando<span class="text-white/30">.dev</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIOLET CONTACT (original) -->
-  <section v-else id="contato" class="relative bg-surface-white py-16 sm:py-24 lg:py-36 overflow-hidden">
+  <section id="contato" class="relative bg-surface-white py-16 sm:py-24 lg:py-36 overflow-hidden">
     <div
       class="absolute w-[400px] h-[400px] rounded-full opacity-[0.06] blur-[100px] pointer-events-none"
       :style="{
