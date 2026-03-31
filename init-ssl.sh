@@ -30,7 +30,7 @@ docker run --rm \
   --email "$EMAIL" \
   --agree-tos \
   --no-eff-email \
-  --keep-existing
+  --non-interactive
 
 echo "==> Parando nginx temporário..."
 docker stop nginx-temp
