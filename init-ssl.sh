@@ -4,24 +4,24 @@ set -e
 
 DOMAIN="jfernando.dev"
 EMAIL="josefernandogmarcial@gmail.com"
+PROJECT="portfolio"
 
 echo "==> Fazendo pull da imagem..."
 docker compose pull portfolio
 
 echo "==> Subindo nginx (HTTP only)..."
-# Usa config temporária sem SSL para o Certbot validar o domínio
-docker compose -f docker-compose.yml up -d portfolio
+docker compose up -d portfolio
 docker run --rm -d --name nginx-temp \
-  --network portfolio_default \
+  --network ${PROJECT}_default \
   -v "$(pwd)/nginx-http.conf:/etc/nginx/conf.d/default.conf:ro" \
-  -v certbot-webroot:/var/www/certbot:ro \
+  -v ${PROJECT}_certbot-webroot:/var/www/certbot:ro \
   -p 80:80 \
   nginx:alpine
 
 echo "==> Gerando certificado SSL..."
 docker run --rm \
-  -v certbot-webroot:/var/www/certbot \
-  -v certbot-certs:/etc/letsencrypt \
+  -v ${PROJECT}_certbot-webroot:/var/www/certbot \
+  -v ${PROJECT}_certbot-certs:/etc/letsencrypt \
   certbot/certbot certonly \
   --webroot \
   -w /var/www/certbot \
