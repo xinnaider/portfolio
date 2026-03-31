@@ -1,6 +1,6 @@
 services:
   portfolio:
-    image: ghcr.io/fernandonepen/portfolio:latest
+    image: ghcr.io/jfernandodev/portfolio:latest
     restart: unless-stopped
     environment:
       - NODE_ENV=production

@@ -34,7 +34,7 @@ O pipeline roda automaticamente a cada push:
 Push na main
   -> CI: lint + typecheck
   -> Deploy: build Docker image
-       -> Push para ghcr.io/fernandonepen/portfolio:latest
+       -> Push para ghcr.io/jfernandodev/portfolio:latest
        -> SSH no servidor: docker compose pull && up -d
 ```
 
