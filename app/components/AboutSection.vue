@@ -44,26 +44,26 @@ const highlights = [
       <!-- Section header -->
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
-        <p class="reveal text-accent text-sm font-semibold uppercase tracking-[4px]">Quem sou</p>
+        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Quem sou</p>
       </div>
 
-      <h2 class="reveal font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-12">
+      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-8 sm:mb-12">
         SOBRE
       </h2>
 
       <div class="grid lg:grid-cols-2 gap-16">
         <!-- Left: Bio -->
         <div>
-          <p class="reveal text-black/70 text-lg leading-relaxed" data-stagger="1">
+          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed" data-stagger="1">
             Sou apaixonado por tecnologia desde cedo — comecei a explorar computadores ainda na infância
             e desde então mantenho uma forte curiosidade por entender como sistemas e tecnologias funcionam.
           </p>
-          <p class="reveal text-black/70 text-lg leading-relaxed mt-6" data-stagger="2">
+          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="2">
             Desenvolvi um perfil autodidata, sempre buscando aprender na prática, testar soluções e
             aprofundar conhecimentos. Gosto de resolver problemas complexos, enfrentar desafios técnicos
             e trabalhar em ambientes que incentivem aprendizado contínuo e evolução profissional.
           </p>
-          <p class="reveal text-black/70 text-lg leading-relaxed mt-6" data-stagger="3">
+          <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed mt-6" data-stagger="3">
             Tenho experiência com sistemas de alto volume de dados, arquiteturas de microsserviços e
             integração com dispositivos IoT usando protocolos especializados como SNMP e LwM2M.
           </p>
@@ -77,15 +77,15 @@ const highlights = [
           >
             <div class="reveal border-l-2 border-accent pl-3 sm:pl-6" data-stagger="1">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">+{{ yearsCounter.count.value }}</span>
-              <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Anos de experiência</p>
+              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">Anos de experiência</p>
             </div>
             <div class="reveal border-l-2 border-black/10 pl-3 sm:pl-6" data-stagger="2">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">{{ companiesCounter.count.value }}</span>
-              <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Empresas</p>
+              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">Empresas</p>
             </div>
             <div class="reveal border-l-2 border-black/10 pl-3 sm:pl-6" data-stagger="3">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">{{ languagesCounter.count.value }}+</span>
-              <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Linguagens</p>
+              <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">Linguagens</p>
             </div>
           </div>
         </div>

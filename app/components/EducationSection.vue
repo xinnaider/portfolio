@@ -23,23 +23,23 @@ const { scrollY } = useScrollProgress()
       <!-- Section header -->
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
-        <p class="reveal text-accent text-sm font-semibold uppercase tracking-[4px]">Educação</p>
+        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Educação</p>
       </div>
 
-      <h2 class="reveal font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-12">
+      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-8 sm:mb-12">
         FORMAÇÃO
       </h2>
 
       <div class="space-y-6 max-w-2xl">
         <!-- Cruzeiro do Sul — atual -->
-        <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="1">
+        <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="1">
           <div class="flex items-start gap-6">
             <div class="hidden sm:flex w-14 h-14 rounded-xl bg-accent/10 items-center justify-center flex-shrink-0">
               <span class="text-accent font-display font-bold text-lg">CS</span>
             </div>
             <div>
               <div class="flex items-center gap-3 mb-1">
-                <p class="font-display font-bold text-xl md:text-2xl text-white">
+                <p class="font-display font-bold text-base sm:text-xl md:text-2xl text-white">
                   Análise e Desenvolvimento de Sistemas
                 </p>
               </div>
@@ -57,13 +57,13 @@ const { scrollY } = useScrollProgress()
         </div>
 
         <!-- IFRO — anterior -->
-        <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="2">
+        <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="2">
           <div class="flex items-start gap-6">
             <div class="hidden sm:flex w-14 h-14 rounded-xl bg-white/[0.05] items-center justify-center flex-shrink-0">
               <span class="text-white/60 font-display font-bold text-xl">IF</span>
             </div>
             <div>
-              <p class="font-display font-bold text-xl md:text-2xl text-white">
+              <p class="font-display font-bold text-base sm:text-xl md:text-2xl text-white">
                 Análise e Desenvolvimento de Sistemas
               </p>
               <p class="text-white/60 text-sm font-semibold mt-1">

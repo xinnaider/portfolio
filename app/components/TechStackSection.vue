@@ -35,14 +35,14 @@ const categories = [
       <!-- Section header -->
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
-        <p class="reveal text-accent text-sm font-semibold uppercase tracking-[4px]">Ferramentas</p>
+        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Ferramentas</p>
       </div>
 
-      <h2 class="reveal font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-6">
+      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-6">
         TECNOLOGIAS
       </h2>
 
-      <p class="reveal text-text-muted text-lg max-w-xl mb-16" data-stagger="1">
+      <p class="reveal text-text-muted text-sm sm:text-lg max-w-xl mb-10 sm:mb-16" data-stagger="1">
         Tecnologias que utilizo no dia a dia para construir soluções robustas e escaláveis.
       </p>
 

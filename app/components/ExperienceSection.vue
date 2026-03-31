@@ -76,10 +76,10 @@ const experiences = [
       <!-- Section header -->
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
-        <p class="reveal text-accent text-sm font-semibold uppercase tracking-[4px]">Trajetória</p>
+        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Trajetória</p>
       </div>
 
-      <h2 class="reveal font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-16">
+      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-10 sm:mb-16">
         EXPERIÊNCIA
       </h2>
 
@@ -113,7 +113,7 @@ const experiences = [
               :data-stagger="index"
             >
               <div class="flex items-center gap-3 flex-wrap">
-                <h3 class="font-display font-bold text-xl md:text-2xl text-white">{{ exp.company }}</h3>
+                <h3 class="font-display font-bold text-lg sm:text-xl md:text-2xl text-white">{{ exp.company }}</h3>
                 <span class="px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded-full border border-accent/40 text-accent bg-accent/10">
                   {{ exp.badge }}
                 </span>
