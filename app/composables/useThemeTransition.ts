@@ -1,3 +1,5 @@
+import { Theme } from './useTheme'
+
 interface Fragment {
   id: number
   clipPath: string
@@ -8,7 +10,15 @@ interface Fragment {
   delay: number
 }
 
+interface InkBlob {
+  id: number
+  cx: number
+  cy: number
+  delay: number
+}
+
 const isTransitioning = ref(false)
+const isInkSplashing = ref(false)
 
 export function useThemeTransition() {
   const prefersReducedMotion = ref(false)
@@ -54,25 +64,22 @@ export function useThemeTransition() {
     return fragments
   }
 
-  async function triggerTransition(onSwapTheme: () => void): Promise<void> {
-    if (isTransitioning.value) return
+  function generateInkBlobs(): InkBlob[] {
+    const count = window.innerWidth < 640 ? 5 : 8
+    return Array.from({ length: count }, (_, i) => ({
+      id: i,
+      cx: 10 + Math.random() * 80,
+      cy: 10 + Math.random() * 80,
+      delay: i * 40,
+    }))
+  }
 
+  async function triggerPanelShatter(onSwapTheme: () => void): Promise<void> {
     isTransitioning.value = true
 
-    if (prefersReducedMotion.value) {
-      onSwapTheme()
-      await new Promise(resolve => setTimeout(resolve, 300))
-      isTransitioning.value = false
-      return
-    }
-
-    // Wait for shatter-out phase
     await new Promise(resolve => setTimeout(resolve, 700))
-
-    // Swap theme while fragments are scattered
     onSwapTheme()
 
-    // Wait for recompose phase
     const isMobile = window.innerWidth < 640
     const totalDuration = isMobile ? 1000 : 1500
     await new Promise(resolve => setTimeout(resolve, totalDuration - 700))
@@ -80,9 +87,41 @@ export function useThemeTransition() {
     isTransitioning.value = false
   }
 
+  async function triggerInkSplash(onSwapTheme: () => void): Promise<void> {
+    isInkSplashing.value = true
+
+    // Wait for ink to cover screen (~400ms)
+    await new Promise(resolve => setTimeout(resolve, 400))
+    onSwapTheme()
+
+    // Wait for ink to retract (~400ms)
+    await new Promise(resolve => setTimeout(resolve, 400))
+
+    isInkSplashing.value = false
+  }
+
+  async function triggerTransition(onSwapTheme: () => void): Promise<void> {
+    const { theme } = useTheme()
+    if (isTransitioning.value || isInkSplashing.value) return
+
+    if (prefersReducedMotion.value) {
+      onSwapTheme()
+      await new Promise(resolve => setTimeout(resolve, 300))
+      return
+    }
+
+    if (theme.value === Theme.VIOLET) {
+      await triggerInkSplash(onSwapTheme)
+    } else {
+      await triggerPanelShatter(onSwapTheme)
+    }
+  }
+
   return {
     isTransitioning: readonly(isTransitioning),
+    isInkSplashing: readonly(isInkSplashing),
     generateFragments,
+    generateInkBlobs,
     triggerTransition,
     prefersReducedMotion,
   }
