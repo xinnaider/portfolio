@@ -50,7 +50,7 @@ const { scrollY } = useScrollProgress()
                 Em andamento · Previsão: Jul 2027
               </p>
               <p class="text-white/80 text-[15px] mt-4 leading-relaxed">
-                Continuação da formação em desenvolvimento de software, com foco em engenharia de software, banco de dados e infraestrutura de TI.
+                Transferência do IFRO após mudança para São Paulo. Continuação da formação em desenvolvimento de software, engenharia de software, banco de dados e infraestrutura de TI.
               </p>
               <div class="w-[60px] h-[3px] bg-accent mt-6" />
             </div>
@@ -71,7 +71,7 @@ const { scrollY } = useScrollProgress()
                 Instituto Federal de Rondônia (IFRO)
               </p>
               <p class="text-white/50 text-xs uppercase tracking-widest mt-1">
-                Cursado até o 4º período
+                Até o 4º período · Transferido para Cruzeiro do Sul
               </p>
             </div>
           </div>
