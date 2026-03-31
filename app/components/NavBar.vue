@@ -22,7 +22,7 @@ onMounted(() => {
   >
     <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
       <a href="#" class="font-display font-extrabold text-xl text-white tracking-tight">
-        FERNANDO<span class="text-accent">.</span>
+        jfernando<span class="text-accent">.dev</span>
       </a>
 
       <div class="hidden md:flex items-center gap-8">
