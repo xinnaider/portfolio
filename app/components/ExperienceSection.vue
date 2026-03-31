@@ -7,7 +7,7 @@ const experiences = [
     description: 'ICT especializado em soluções de monitoramento e gestão de dispositivos IoT.',
     role: 'Desenvolvedor Full Stack',
     badge: 'Pleno',
-    period: 'Mai 2024 – Atual',
+    period: 'Ago 2025 – Atual',
     tags: ['Vue.js', 'Spring Boot', '.NET', 'RabbitMQ', 'SNMP', 'LwM2M'],
     items: [
       'Desenvolvimento e manutenção de serviços em arquitetura de microsserviços com Eureka e API Gateway.',
