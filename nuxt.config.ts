@@ -50,6 +50,13 @@ export default defineNuxtConfig({
       ],
       meta: [
         { name: 'description', content: 'José Fernando — Desenvolvedor Full Stack' }
+      ],
+      script: [
+        {
+          src: '/analytics/script.js',
+          async: true,
+          'data-website-id': process.env.UMAMI_WEBSITE_ID || ''
+        }
       ]
     }
   }
