@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
 
-  css: ['~/assets/css/main.css', '~/assets/css/manga-theme.css', '~/assets/css/panel-shatter.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/manga-theme.css', '~/assets/css/panel-shatter.css', '~/assets/css/ink-splash.css'],
 
   vite: {
     plugins: [tailwindcss()]
