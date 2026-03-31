@@ -1,53 +1,25 @@
 <script setup lang="ts">
+const { tm } = useI18n()
 const { scrollY } = useScrollProgress()
 
-const experiences = [
-  {
-    company: 'Grupo NEPEN',
-    description: 'ICT especializado em soluções de monitoramento e gestão de dispositivos IoT.',
-    role: 'Desenvolvedor Full Stack',
-    badge: 'Pleno',
-    period: 'Ago 2025 – Atual',
-    tags: ['Vue.js', 'Spring Boot', '.NET', 'RabbitMQ', 'SNMP', 'LwM2M'],
-    items: [
-      'Desenvolvimento e manutenção de serviços em arquitetura de microsserviços com Eureka e API Gateway.',
-      'Implementação de comunicação assíncrona utilizando RabbitMQ.',
-      'Integração com dispositivos utilizando protocolos SNMP e LwM2M.',
-      'Atuação em sistemas de alto volume de dados e alta disponibilidade.',
-      'Contato com clientes para levantamento de requisitos e alinhamentos técnicos.'
-    ]
-  },
-  {
-    company: 'Eficiência Fiscal',
-    description: 'Startup focada em automação fiscal e tributária para empresas de médio e grande porte.',
-    role: 'Desenvolvedor Full Stack',
-    badge: 'Junior → Pleno',
-    period: 'Mai 2023 – Ago 2025',
-    tags: ['Laravel', 'PHP', 'Python', 'Java', 'Electron', 'DevOps'],
-    promotion: { from: 'Junior', to: 'Pleno', date: 'Ago 2024' },
-    items: [
-      'Desenvolvimento de funcionalidades utilizando Laravel, PHP, JavaScript, Python, Java e Electron.',
-      'Implementação de rotinas de web scraping para extração automatizada de dados fiscais.',
-      'Download, processamento e integração de documentos fiscais em larga escala.',
-      'Atuação em DevOps e manutenção da infraestrutura da aplicação.',
-      'Migração de banco de dados de grande porte (~4TB).'
-    ]
-  },
-  {
-    company: 'PROINFE',
-    description: 'Projeto de pesquisa e extensão do Instituto Federal de Rondônia (IFRO) voltado ao desenvolvimento de soluções tecnológicas para a comunidade.',
-    role: 'Desenvolvedor Full Stack',
-    badge: 'Bolsista',
-    period: 'Ago 2023 – Ago 2024',
-    tags: ['Next.js', 'Nest.js', 'Docker', 'Material UI'],
-    items: [
-      'Desenvolvimento de frontend utilizando Next.js e Material UI.',
-      'Backend com Nest.js em arquitetura de microsserviços.',
-      'Docker para criação e gerenciamento de contêineres.',
-      'Organização de serviços containerizados para desenvolvimento.'
-    ]
-  }
-]
+interface Promotion {
+  from: string
+  to: string
+  date: string
+}
+
+interface Experience {
+  company: string
+  description: string
+  role: string
+  badge: string
+  period: string
+  tags: string[]
+  promotion?: Promotion
+  items: string[]
+}
+
+const experiences = computed(() => tm('experience.jobs') as Experience[])
 </script>
 
 <template>
@@ -56,7 +28,7 @@ const experiences = [
       class="absolute left-[-20px] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
       :style="{ top: `calc(50% + ${scrollY * -0.08}px)`, transform: 'translateY(-50%)' }"
     >
-      EXPERIÊNCIA
+      {{ $t('experience.backgroundText') }}
     </div>
 
     <div
@@ -73,11 +45,11 @@ const experiences = [
     <div class="relative z-10 max-w-6xl mx-auto px-6">
       <div class="flex items-center gap-4 mb-4">
         <div class="reveal w-12 h-[1px] bg-accent" />
-        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Trajetória</p>
+        <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">{{ $t('experience.label') }}</p>
       </div>
 
       <h2 class="reveal font-display font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-10 sm:mb-16">
-        EXPERIÊNCIA
+        {{ $t('experience.title') }}
       </h2>
 
       <div class="relative">
