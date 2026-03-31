@@ -9,12 +9,10 @@ watch(isInkSplashing, (val) => {
     blobs.value = generateInkBlobs()
     phase.value = 'growing'
 
-    // Switch to shrinking after ink covers screen
     setTimeout(() => {
       phase.value = 'shrinking'
     }, 420)
 
-    // Reset after full animation
     setTimeout(() => {
       phase.value = 'idle'
       blobs.value = []

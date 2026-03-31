@@ -104,6 +104,7 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
     <div class="info">
       <span>${t('hero.locationValue')}</span><span>|</span>
       <span>linkedin.com/in/jfernandodev</span><span>|</span>
+      <span>github.com/xinnaider</span><span>|</span>
       <span>jfernando.dev</span>
     </div>
   </div>

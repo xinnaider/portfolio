@@ -21,7 +21,6 @@ const currentLayout = computed(() =>
   theme.value === Theme.MANGA ? MangaLayout : VioletLayout
 )
 
-// Re-observe .reveal elements after layout swap so new DOM nodes are picked up
 watch(theme, async () => {
   await nextTick()
   observeNew()
