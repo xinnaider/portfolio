@@ -102,32 +102,28 @@ const experiences = [
 
             <!-- Card -->
             <div
-              class="reveal gradient-border bg-border-dark/30 rounded-xl p-8 hover:bg-border-dark/60 transition-all duration-300"
+              class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 hover:border-accent/20 transition-all duration-300"
               :data-stagger="index"
             >
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                <div>
-                  <h3 class="font-display font-bold text-2xl text-white">{{ exp.company }}</h3>
-                  <p class="text-accent text-sm mt-1 font-semibold">{{ exp.role }}</p>
-                </div>
-              </div>
+              <h3 class="font-display font-bold text-xl md:text-2xl text-white">{{ exp.company }}</h3>
+              <p class="text-accent text-sm mt-1 font-semibold">{{ exp.role }}</p>
 
-              <ul class="space-y-3 mb-6">
+              <ul class="space-y-3 mt-5 mb-6">
                 <li
                   v-for="item in exp.items"
                   :key="item"
-                  class="text-white/60 text-sm leading-relaxed pl-5 relative before:content-['▹'] before:absolute before:left-0 before:text-accent before:text-xs"
+                  class="text-white/80 text-[15px] leading-relaxed pl-5 relative before:content-['▹'] before:absolute before:left-0 before:top-[2px] before:text-accent"
                 >
                   {{ item }}
                 </li>
               </ul>
 
               <!-- Tech tags -->
-              <div class="flex flex-wrap gap-2 pt-4 border-t border-white/[0.06]">
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-white/[0.08]">
                 <span
                   v-for="tag in exp.tags"
                   :key="tag"
-                  class="px-3 py-1 text-xs rounded-full border border-white/10 text-white/40 hover:border-accent/40 hover:text-accent transition-colors duration-200"
+                  class="px-3 py-1 text-xs rounded-full border border-white/15 text-white/60 hover:border-accent/40 hover:text-accent transition-colors duration-200"
                 >
                   {{ tag }}
                 </span>
