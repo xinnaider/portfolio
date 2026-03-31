@@ -30,22 +30,50 @@ const { scrollY } = useScrollProgress()
         FORMAÇÃO
       </h2>
 
-      <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 lg:p-12 max-w-2xl hover:border-accent/20 transition-all duration-300" data-stagger="1">
-        <div class="flex items-start gap-6">
-          <div class="hidden sm:flex w-14 h-14 rounded-xl bg-accent/10 items-center justify-center flex-shrink-0">
-            <span class="text-accent font-display font-bold text-xl">IF</span>
+      <div class="space-y-6 max-w-2xl">
+        <!-- Cruzeiro do Sul — atual -->
+        <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="1">
+          <div class="flex items-start gap-6">
+            <div class="hidden sm:flex w-14 h-14 rounded-xl bg-accent/10 items-center justify-center flex-shrink-0">
+              <span class="text-accent font-display font-bold text-lg">CS</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <p class="font-display font-bold text-xl md:text-2xl text-white">
+                  Análise e Desenvolvimento de Sistemas
+                </p>
+              </div>
+              <p class="text-accent text-sm font-semibold mt-1">
+                Universidade Cruzeiro do Sul
+              </p>
+              <p class="text-white/50 text-xs uppercase tracking-widest mt-1">
+                Em andamento · Previsão: Jul 2027
+              </p>
+              <p class="text-white/80 text-[15px] mt-4 leading-relaxed">
+                Continuação da formação em desenvolvimento de software, com foco em engenharia de software, banco de dados e infraestrutura de TI.
+              </p>
+              <div class="w-[60px] h-[3px] bg-accent mt-6" />
+            </div>
           </div>
-          <div>
-            <p class="font-display font-bold text-xl md:text-2xl text-white">
-              Análise e Desenvolvimento de Sistemas
-            </p>
-            <p class="text-accent text-sm font-semibold mt-2">
-              Instituto Federal de Rondônia (IFRO)
-            </p>
-            <p class="text-white/80 text-[15px] mt-4 leading-relaxed">
-              Formação focada em desenvolvimento de software, banco de dados, engenharia de software e infraestrutura de TI.
-            </p>
-            <div class="w-[60px] h-[3px] bg-accent mt-6" />
+        </div>
+
+        <!-- IFRO — anterior -->
+        <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="2">
+          <div class="flex items-start gap-6">
+            <div class="hidden sm:flex w-14 h-14 rounded-xl bg-white/[0.05] items-center justify-center flex-shrink-0">
+              <span class="text-white/60 font-display font-bold text-xl">IF</span>
+            </div>
+            <div>
+              <p class="font-display font-bold text-xl md:text-2xl text-white">
+                Análise e Desenvolvimento de Sistemas
+              </p>
+              <p class="text-white/60 text-sm font-semibold mt-1">
+                Instituto Federal de Rondônia (IFRO)
+              </p>
+              <p class="text-white/50 text-xs uppercase tracking-widest mt-1">
+                Cursado até o 4º período
+              </p>
+            </div>
           </div>
         </div>
       </div>
