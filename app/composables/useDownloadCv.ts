@@ -1,11 +1,55 @@
 export const useDownloadCv = () => {
   const isGenerating = ref(false)
+  const { t, tm, rt } = useI18n()
 
   const download = async () => {
     if (isGenerating.value) return
     isGenerating.value = true
 
     try {
+      const jobs = tm('experience.jobs') as Array<{
+        company: { val: string }
+        role: { val: string }
+        description: { val: string }
+        badge: { val: string }
+        period: { val: string }
+        tags: Array<{ val: string }>
+        promotion?: { from: { val: string }, to: { val: string }, date: { val: string } }
+        items: Array<{ val: string }>
+        [key: string]: unknown
+      }>
+
+      const educationEntries = tm('education.entries') as Array<{
+        title: { val: string }
+        institution: { val: string }
+        status: { val: string }
+        [key: string]: unknown
+      }>
+
+      const jobsHtml = jobs.map((job) => {
+        const items = (job.items as unknown[]).map(item => `<li>${rt(item as { val: string })}</li>`).join('\n        ')
+        const tags = (job.tags as unknown[]).map(tag => rt(tag as { val: string })).join(' · ')
+        const promo = job.promotion
+          ? `<p class="promo">${rt(job.promotion.from)} → ${rt(job.promotion.to)} (${rt(job.promotion.date)})</p>`
+          : ''
+
+        return `<div class="ent">
+      <div class="ent-h"><div><strong>${rt(job.role)}</strong> — ${rt(job.company)}</div><div class="date">${rt(job.period)}</div></div>
+      <p class="desc">${rt(job.description)}</p>
+      ${promo}
+      <ul>
+        ${items}
+      </ul>
+      <div class="tags">${tags}</div>
+    </div>`
+      }).join('\n    ')
+
+      const eduHtml = educationEntries.map((entry) => {
+        return `<div class="ent">
+      <div class="ent-h"><div><strong>${rt(entry.title)}</strong> — ${rt(entry.institution)}</div><div class="date">${rt(entry.status)}</div></div>
+    </div>`
+      }).join('\n    ')
+
       const iframe = document.createElement('iframe')
       iframe.style.position = 'fixed'
       iframe.style.left = '-9999px'
@@ -56,77 +100,37 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
 <div class="cv">
   <div class="hdr">
     <h1>José Fernando Gomes Marcial</h1>
-    <p class="sub">Desenvolvedor Full Stack</p>
+    <p class="sub">${t('hero.subtitle')}</p>
     <div class="info">
-      <span>São Paulo – SP, Brasil</span><span>|</span>
+      <span>${t('hero.locationValue')}</span><span>|</span>
       <span>linkedin.com/in/jfernandodev</span><span>|</span>
       <span>jfernando.dev</span>
     </div>
   </div>
 
   <div class="sec">
-    <h2>Sobre</h2>
-    <p>Desenvolvedor Full Stack com +4 anos de experiência em sistemas de alto volume de dados, arquiteturas de microsserviços e integração com dispositivos IoT usando protocolos SNMP e LwM2M. Perfil autodidata com foco em resolver problemas complexos e entregar soluções escaláveis.</p>
+    <h2>${t('about.title')}</h2>
+    <p>${t('about.bio3')}</p>
   </div>
 
   <div class="sec">
-    <h2>Experiência Profissional</h2>
-    <div class="ent">
-      <div class="ent-h"><div><strong>Desenvolvedor Full Stack Pleno</strong> — Grupo NEPEN</div><div class="date">Ago 2025 – Atual</div></div>
-      <p class="desc">ICT especializado em soluções de monitoramento e gestão de dispositivos IoT.</p>
-      <ul>
-        <li>Desenvolvimento e manutenção de serviços em arquitetura de microsserviços com Eureka e API Gateway.</li>
-        <li>Implementação de comunicação assíncrona utilizando RabbitMQ.</li>
-        <li>Integração com dispositivos utilizando protocolos SNMP e LwM2M.</li>
-        <li>Atuação em sistemas de alto volume de dados e alta disponibilidade.</li>
-        <li>Contato com clientes para levantamento de requisitos e alinhamentos técnicos.</li>
-      </ul>
-      <div class="tags">Vue.js · Spring Boot · .NET · RabbitMQ · SNMP · LwM2M</div>
-    </div>
-    <div class="ent">
-      <div class="ent-h"><div><strong>Desenvolvedor Full Stack</strong> — Eficiência Fiscal</div><div class="date">Mai 2023 – Ago 2025</div></div>
-      <p class="desc">Startup focada em automação fiscal e tributária para empresas de médio e grande porte.</p>
-      <p class="promo">Promovido de Junior para Pleno em Ago 2024</p>
-      <ul>
-        <li>Desenvolvimento utilizando Laravel, PHP, JavaScript, Python, Java e Electron.</li>
-        <li>Web scraping para extração automatizada de dados fiscais.</li>
-        <li>Processamento e integração de documentos fiscais em larga escala.</li>
-        <li>DevOps e manutenção da infraestrutura. Migração de banco ~4TB.</li>
-      </ul>
-      <div class="tags">Laravel · PHP · Python · Java · Electron · DevOps</div>
-    </div>
-    <div class="ent">
-      <div class="ent-h"><div><strong>Desenvolvedor Full Stack</strong> — PROINFE (IFRO)</div><div class="date">Ago 2023 – Ago 2024</div></div>
-      <p class="desc">Projeto de pesquisa e extensão do Instituto Federal de Rondônia.</p>
-      <ul>
-        <li>Frontend com Next.js e Material UI. Backend com Nest.js em microsserviços.</li>
-        <li>Docker para criação e gerenciamento de contêineres.</li>
-      </ul>
-      <div class="tags">Next.js · Nest.js · Docker · Material UI</div>
-    </div>
+    <h2>${t('experience.title')}</h2>
+    ${jobsHtml}
   </div>
 
   <div class="sec">
-    <h2>Tecnologias</h2>
+    <h2>${t('tech.title')}</h2>
     <div class="tech">
-      <div><strong>Linguagens:</strong> Java, PHP, JavaScript, Python, Node.js, C# (.NET)</div>
-      <div><strong>Frameworks:</strong> Spring Boot, Laravel, Nest.js, Vue.js, Next.js, Electron</div>
-      <div><strong>Arquitetura:</strong> Microservices, REST APIs, RabbitMQ, API Gateway, Eureka</div>
-      <div><strong>Infra:</strong> Docker, DevOps, Web Scraping, SNMP, LwM2M</div>
+      <div><strong>${t('tech.categories.languages')}:</strong> Java, PHP, JavaScript, Python, Node.js, C# (.NET)</div>
+      <div><strong>${t('tech.categories.frameworks')}:</strong> Spring Boot, Laravel, Nest.js, Vue.js, Next.js, Electron</div>
+      <div><strong>${t('tech.categories.architecture')}:</strong> Microservices, REST APIs, RabbitMQ, API Gateway, Eureka</div>
+      <div><strong>${t('tech.categories.infra')}:</strong> Docker, DevOps, Web Scraping, SNMP, LwM2M</div>
     </div>
   </div>
 
   <div class="sec">
-    <h2>Formação</h2>
-    <div class="ent">
-      <div class="ent-h"><div><strong>Análise e Desenvolvimento de Sistemas</strong> — Universidade Cruzeiro do Sul</div><div class="date">Em andamento · Previsão: Jul 2027</div></div>
-    </div>
-    <div class="ent">
-      <div class="ent-h"><div><strong>Análise e Desenvolvimento de Sistemas</strong> — IFRO</div><div class="date">Até o 4º período · Transferido</div></div>
-    </div>
-    <div class="ent">
-      <div class="ent-h"><div><strong>Ensino Médio Técnico em Informática</strong> — IFRO</div><div class="date">Concluído em 2022</div></div>
-    </div>
+    <h2>${t('education.title')}</h2>
+    ${eduHtml}
   </div>
 </div>
 </body></html>`)
