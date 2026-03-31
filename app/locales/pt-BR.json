@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "description": "José Fernando — Desenvolvedor Full Stack"
+  },
+  "skip": "Pular para o conteúdo",
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "tech": "Tech",
+    "contact": "Contato",
+    "resume": "Currículo",
+    "generating": "Gerando...",
+    "openMenu": "Abrir menu",
+    "backToTop": "jfernando.dev — Voltar ao topo"
+  },
+  "hero": {
+    "subtitle": "Full Stack Developer",
+    "description": "Construo sistemas que escalam e entrego o que funciona — do microsserviço ao frontend, da arquitetura ao deploy.",
+    "locationLabel": "Localização",
+    "locationValue": "São Paulo – SP, Brasil",
+    "connect": "Conectar",
+    "resume": "Currículo",
+    "generating": "Gerando...",
+    "downloadCv": "Download CV",
+    "scroll": "Scroll",
+    "linkedinAria": "LinkedIn de José Fernando"
+  },
+  "about": {
+    "label": "Quem sou",
+    "title": "SOBRE",
+    "backgroundText": "SOBRE",
+    "bio1": "Sou apaixonado por tecnologia desde cedo — comecei a explorar computadores ainda na infância e desde então mantenho uma forte curiosidade por entender como sistemas e tecnologias funcionam.",
+    "bio2": "Desenvolvi um perfil autodidata, sempre buscando aprender na prática, testar soluções e aprofundar conhecimentos. Gosto de resolver problemas complexos, enfrentar desafios técnicos e trabalhar em ambientes que incentivem aprendizado contínuo e evolução profissional.",
+    "bio3": "Tenho experiência com sistemas de alto volume de dados, arquiteturas de microsserviços e integração com dispositivos IoT usando protocolos especializados como SNMP e LwM2M.",
+    "yearsLabel": "Anos de experiência",
+    "companiesLabel": "Empresas",
+    "languagesLabel": "Linguagens",
+    "highlights": [
+      { "title": "Backend Robusto", "desc": "APIs REST, microsserviços com Spring Boot, .NET e Nest.js. Comunicação assíncrona com RabbitMQ." },
+      { "title": "Frontend Moderno", "desc": "Interfaces reativas com Vue.js e Next.js. Experiência com Electron para apps desktop." },
+      { "title": "Infraestrutura", "desc": "Docker, DevOps, integração com dispositivos via SNMP e LwM2M. Sistemas de alta disponibilidade." },
+      { "title": "Dados em Escala", "desc": "Migração de bancos 4TB+, web scraping automatizado, processamento de documentos fiscais em larga escala." },
+      { "title": "Desenvolvimento com IA", "desc": "Uso de agentes de IA (Claude Code, Cursor) para acelerar entregas, code review automatizado e orquestração de tarefas paralelas com multi-agents." }
+    ]
+  },
+  "experience": {
+    "label": "Trajetória",
+    "title": "EXPERIÊNCIA",
+    "backgroundText": "EXPERIÊNCIA",
+    "jobs": [
+      {
+        "company": "Grupo NEPEN",
+        "description": "ICT especializado em soluções de monitoramento e gestão de dispositivos IoT.",
+        "role": "Desenvolvedor Full Stack",
+        "badge": "Pleno",
+        "period": "Ago 2025 – Atual",
+        "tags": ["Vue.js", "Spring Boot", ".NET", "RabbitMQ", "SNMP", "LwM2M"],
+        "items": [
+          "Desenvolvimento e manutenção de serviços em arquitetura de microsserviços com Eureka e API Gateway.",
+          "Implementação de comunicação assíncrona utilizando RabbitMQ.",
+          "Integração com dispositivos utilizando protocolos SNMP e LwM2M.",
+          "Atuação em sistemas de alto volume de dados e alta disponibilidade.",
+          "Contato com clientes para levantamento de requisitos e alinhamentos técnicos."
+        ]
+      },
+      {
+        "company": "Eficiência Fiscal",
+        "description": "Startup focada em automação fiscal e tributária para empresas de médio e grande porte.",
+        "role": "Desenvolvedor Full Stack",
+        "badge": "Junior → Pleno",
+        "period": "Mai 2023 – Ago 2025",
+        "tags": ["Laravel", "PHP", "Python", "Java", "Electron", "DevOps"],
+        "promotion": { "from": "Junior", "to": "Pleno", "date": "Ago 2024" },
+        "items": [
+          "Desenvolvimento de funcionalidades utilizando Laravel, PHP, JavaScript, Python, Java e Electron.",
+          "Implementação de rotinas de web scraping para extração automatizada de dados fiscais.",
+          "Download, processamento e integração de documentos fiscais em larga escala.",
+          "Atuação em DevOps e manutenção da infraestrutura da aplicação.",
+          "Migração de banco de dados de grande porte (~4TB)."
+        ]
+      },
+      {
+        "company": "PROINFE",
+        "description": "Projeto de pesquisa e extensão do Instituto Federal de Rondônia (IFRO) voltado ao desenvolvimento de soluções tecnológicas para a comunidade.",
+        "role": "Desenvolvedor Full Stack",
+        "badge": "Bolsista",
+        "period": "Ago 2023 – Ago 2024",
+        "tags": ["Next.js", "Nest.js", "Docker", "Material UI"],
+        "items": [
+          "Desenvolvimento de frontend utilizando Next.js e Material UI.",
+          "Backend com Nest.js em arquitetura de microsserviços.",
+          "Docker para criação e gerenciamento de contêineres.",
+          "Organização de serviços containerizados para desenvolvimento."
+        ]
+      }
+    ]
+  },
+  "tech": {
+    "label": "Ferramentas",
+    "title": "TECNOLOGIAS",
+    "description": "Tecnologias que utilizo no dia a dia para construir soluções robustas e escaláveis.",
+    "categories": {
+      "languages": "Linguagens",
+      "frameworks": "Frameworks",
+      "architecture": "Arquitetura",
+      "infra": "Infra & Outros",
+      "ai": "AI & Produtividade"
+    }
+  },
+  "education": {
+    "label": "Educação",
+    "title": "FORMAÇÃO",
+    "backgroundText": "FORMAÇÃO",
+    "entries": [
+      {
+        "title": "Análise e Desenvolvimento de Sistemas",
+        "abbr": "CS",
+        "institution": "Universidade Cruzeiro do Sul",
+        "status": "Em andamento · Previsão: Jul 2027",
+        "description": "Transferência do IFRO após mudança para São Paulo. Continuação da formação em desenvolvimento de software, engenharia de software, banco de dados e infraestrutura de TI."
+      },
+      {
+        "title": "Análise e Desenvolvimento de Sistemas",
+        "abbr": "IF",
+        "institution": "Instituto Federal de Rondônia (IFRO)",
+        "status": "Até o 4º período · Transferido para Cruzeiro do Sul"
+      },
+      {
+        "title": "Ensino Médio Técnico em Informática",
+        "abbr": "IF",
+        "institution": "Instituto Federal de Rondônia (IFRO)",
+        "status": "Concluído em 2022"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contato",
+    "title1": "VAMOS",
+    "title2": "CONVERSAR",
+    "description": "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades de fazer parte da sua equipe.",
+    "linkedinAria": "LinkedIn de José Fernando",
+    "location": "São Paulo – SP, Brasil",
+    "copyright": "© {year} José Fernando Gomes Marcial"
+  }
+}

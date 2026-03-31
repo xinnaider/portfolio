@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "description": "José Fernando — Full Stack Developer"
+  },
+  "skip": "Skip to content",
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "tech": "Tech",
+    "contact": "Contact",
+    "resume": "Resume",
+    "generating": "Generating...",
+    "openMenu": "Open menu",
+    "backToTop": "jfernando.dev — Back to top"
+  },
+  "hero": {
+    "subtitle": "Full Stack Developer",
+    "description": "I build systems that scale and deliver what works — from microservices to frontend, from architecture to deployment.",
+    "locationLabel": "Location",
+    "locationValue": "São Paulo – SP, Brazil",
+    "connect": "Connect",
+    "resume": "Resume",
+    "generating": "Generating...",
+    "downloadCv": "Download CV",
+    "scroll": "Scroll",
+    "linkedinAria": "José Fernando's LinkedIn"
+  },
+  "about": {
+    "label": "Who I am",
+    "title": "ABOUT",
+    "backgroundText": "ABOUT",
+    "bio1": "I've been passionate about technology since childhood — I started exploring computers at a young age and have maintained a strong curiosity for understanding how systems and technologies work ever since.",
+    "bio2": "I developed a self-taught profile, always seeking to learn by doing, test solutions, and deepen my knowledge. I enjoy solving complex problems, tackling technical challenges, and working in environments that encourage continuous learning and professional growth.",
+    "bio3": "I have experience with high-volume data systems, microservices architectures, and integration with IoT devices using specialized protocols such as SNMP and LwM2M.",
+    "yearsLabel": "Years of experience",
+    "companiesLabel": "Companies",
+    "languagesLabel": "Languages",
+    "highlights": [
+      { "title": "Robust Backend", "desc": "REST APIs, microservices with Spring Boot, .NET, and Nest.js. Asynchronous communication with RabbitMQ." },
+      { "title": "Modern Frontend", "desc": "Reactive interfaces with Vue.js and Next.js. Experience with Electron for desktop apps." },
+      { "title": "Infrastructure", "desc": "Docker, DevOps, device integration via SNMP and LwM2M. High-availability systems." },
+      { "title": "Data at Scale", "desc": "4TB+ database migration, automated web scraping, large-scale fiscal document processing." },
+      { "title": "AI-Powered Development", "desc": "Using AI agents (Claude Code, Cursor) to accelerate delivery, automated code review, and parallel task orchestration with multi-agents." }
+    ]
+  },
+  "experience": {
+    "label": "Career",
+    "title": "EXPERIENCE",
+    "backgroundText": "EXPERIENCE",
+    "jobs": [
+      {
+        "company": "Grupo NEPEN",
+        "description": "ICT company specialized in IoT device monitoring and management solutions.",
+        "role": "Full Stack Developer",
+        "badge": "Mid-level",
+        "period": "Aug 2025 – Present",
+        "tags": ["Vue.js", "Spring Boot", ".NET", "RabbitMQ", "SNMP", "LwM2M"],
+        "items": [
+          "Development and maintenance of services in a microservices architecture with Eureka and API Gateway.",
+          "Implementation of asynchronous communication using RabbitMQ.",
+          "Integration with devices using SNMP and LwM2M protocols.",
+          "Working with high-volume data systems and high-availability environments.",
+          "Client-facing requirements gathering and technical alignment meetings."
+        ]
+      },
+      {
+        "company": "Eficiência Fiscal",
+        "description": "Startup focused on fiscal and tax automation for mid-to-large enterprises.",
+        "role": "Full Stack Developer",
+        "badge": "Junior → Mid-level",
+        "period": "May 2023 – Aug 2025",
+        "tags": ["Laravel", "PHP", "Python", "Java", "Electron", "DevOps"],
+        "promotion": { "from": "Junior", "to": "Mid-level", "date": "Aug 2024" },
+        "items": [
+          "Feature development using Laravel, PHP, JavaScript, Python, Java, and Electron.",
+          "Implementation of web scraping routines for automated fiscal data extraction.",
+          "Download, processing, and integration of fiscal documents at scale.",
+          "DevOps work and application infrastructure maintenance.",
+          "Large-scale database migration (~4TB)."
+        ]
+      },
+      {
+        "company": "PROINFE",
+        "description": "Research and extension project from the Federal Institute of Rondônia (IFRO) focused on developing technology solutions for the community.",
+        "role": "Full Stack Developer",
+        "badge": "Scholar",
+        "period": "Aug 2023 – Aug 2024",
+        "tags": ["Next.js", "Nest.js", "Docker", "Material UI"],
+        "items": [
+          "Frontend development using Next.js and Material UI.",
+          "Backend with Nest.js in a microservices architecture.",
+          "Docker for container creation and management.",
+          "Organization of containerized services for development."
+        ]
+      }
+    ]
+  },
+  "tech": {
+    "label": "Tools",
+    "title": "TECHNOLOGIES",
+    "description": "Technologies I use daily to build robust and scalable solutions.",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "architecture": "Architecture",
+      "infra": "Infra & Others",
+      "ai": "AI & Productivity"
+    }
+  },
+  "education": {
+    "label": "Education",
+    "title": "EDUCATION",
+    "backgroundText": "EDUCATION",
+    "entries": [
+      {
+        "title": "Systems Analysis and Development",
+        "abbr": "CS",
+        "institution": "Universidade Cruzeiro do Sul",
+        "status": "In progress · Expected: Jul 2027",
+        "description": "Transferred from IFRO after moving to São Paulo. Continuing education in software development, software engineering, databases, and IT infrastructure."
+      },
+      {
+        "title": "Systems Analysis and Development",
+        "abbr": "IF",
+        "institution": "Instituto Federal de Rondônia (IFRO)",
+        "status": "Up to 4th semester · Transferred to Cruzeiro do Sul"
+      },
+      {
+        "title": "Technical High School in Computer Science",
+        "abbr": "IF",
+        "institution": "Instituto Federal de Rondônia (IFRO)",
+        "status": "Completed in 2022"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title1": "LET'S",
+    "title2": "TALK",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to join your team.",
+    "linkedinAria": "José Fernando's LinkedIn",
+    "location": "São Paulo – SP, Brazil",
+    "copyright": "© {year} José Fernando Gomes Marcial"
+  }
+}
