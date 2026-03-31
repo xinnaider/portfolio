@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paleta de Cores</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #e5e5e5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 40px 20px; }
+  h1 { text-align: center; font-size: 28px; margin-bottom: 8px; color: #fff; }
+  .subtitle { text-align: center; color: #a3a3a3; margin-bottom: 40px; font-size: 16px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+  .card { background: #171717; border-radius: 16px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+  .card.selected { border-color: #6366f1; }
+  .gradient-bar { height: 140px; display: flex; }
+  .gradient-bar > div { flex: 1; }
+  .card-body { padding: 20px; }
+  .card-body h3 { font-size: 18px; color: #fff; margin-bottom: 8px; }
+  .card-body p { font-size: 14px; color: #a3a3a3; line-height: 1.5; }
+  .label { display: inline-block; background: #262626; color: #d4d4d4; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<h1>Qual paleta de cores te representa?</h1>
+<p class="subtitle">A cor principal define o tom de todo o portfólio</p>
+
+<div class="grid">
+
+  <div class="card" onclick="this.classList.toggle('selected')">
+    <div class="gradient-bar">
+      <div style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"></div>
+      <div style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)"></div>
+      <div style="background:linear-gradient(135deg,#a78bfa,#c4b5fd)"></div>
+    </div>
+    <div class="card-body">
+      <span class="label">A</span>
+      <h3>Indigo / Violet</h3>
+      <p>Profissional com personalidade. Transmite inovação e criatividade técnica.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('selected')">
+    <div class="gradient-bar">
+      <div style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"></div>
+      <div style="background:linear-gradient(135deg,#3b82f6,#6366f1)"></div>
+      <div style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"></div>
+    </div>
+    <div class="card-body">
+      <span class="label">B</span>
+      <h3>Cyan → Blue → Violet</h3>
+      <p>Gradiente amplo e vibrante. Tecnológico e energético. Perfeito para animações de gradiente.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('selected')">
+    <div class="gradient-bar">
+      <div style="background:linear-gradient(135deg,#10b981,#06b6d4)"></div>
+      <div style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"></div>
+      <div style="background:linear-gradient(135deg,#3b82f6,#8b5cf6)"></div>
+    </div>
+    <div class="card-body">
+      <span class="label">C</span>
+      <h3>Emerald → Cyan → Blue → Violet</h3>
+      <p>Espectro completo, quase Aurora Boreal. Ideal para efeitos de partículas ou mesh gradients.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('selected')">
+    <div class="gradient-bar">
+      <div style="background:linear-gradient(135deg,#f97316,#ef4444)"></div>
+      <div style="background:linear-gradient(135deg,#ef4444,#ec4899)"></div>
+      <div style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"></div>
+    </div>
+    <div class="card-body">
+      <span class="label">D</span>
+      <h3>Orange → Red → Pink → Violet</h3>
+      <p>Quente e ousado. Energia e paixão. Destaca-se entre portfólios "seguros".</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

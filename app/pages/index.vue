@@ -4,10 +4,18 @@ useHead({
 })
 
 useScrollReveal()
+
+const { progress } = useScrollProgress()
 </script>
 
 <template>
   <div>
+    <!-- Scroll progress bar -->
+    <div
+      class="scroll-progress"
+      :style="{ width: `${progress * 100}%` }"
+    />
+
     <NavBar />
     <HeroSection />
     <AboutSection />

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cor de Acento no Layout A</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #e5e5e5; font-family: 'Space Grotesk', sans-serif; padding: 20px; }
+  h1 { text-align: center; font-size: 24px; color: #fff; margin-bottom: 6px; font-family: 'Space Grotesk'; }
+  .subtitle { text-align: center; color: #525252; margin-bottom: 40px; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1000px; margin: 0 auto; }
+
+  .card { border-radius: 16px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.3s, transform 0.2s; }
+  .card:hover { transform: translateY(-3px); }
+
+  /* Shared mockup styles */
+  .m-nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
+  .m-logo { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: #000; letter-spacing: -1px; }
+  .m-links { display: flex; gap: 16px; }
+  .m-links span { font-size: 11px; color: #999; }
+  .m-hero { padding: 32px 24px; position: relative; overflow: hidden; }
+  .m-hero::after {
+    content: 'DEVELOPER'; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+    font-family: 'Syne'; font-size: 80px; font-weight: 800; color: rgba(255,255,255,0.04);
+    letter-spacing: -3px; white-space: nowrap;
+  }
+  .m-role { font-size: 11px; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 8px; }
+  .m-name { font-family: 'Syne'; font-size: 32px; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -1.5px; }
+  .m-line { width: 48px; height: 3px; margin-top: 16px; }
+  .m-bottom { display: flex; }
+  .m-col { flex: 1; padding: 16px 24px; }
+  .m-col .m-label { font-size: 9px; text-transform: uppercase; letter-spacing: 3px; color: #999; margin-bottom: 4px; }
+  .m-col .m-value { font-family: 'Syne'; font-size: 15px; font-weight: 700; }
+
+  .card-info { padding: 12px 0; }
+  .card-info h3 { font-family: 'Syne'; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .card-info p { font-size: 12px; color: #525252; line-height: 1.5; }
+  .letter-badge { display: inline-block; width: 24px; height: 24px; border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; color: #000; }
+</style>
+</head>
+<body>
+
+<h1>Qual cor de impacto no layout A?</h1>
+<p class="subtitle">A cor aparece só nos destaques: linha de acento, links ativos e hover states</p>
+
+<div class="grid">
+
+  <!-- Electric Blue -->
+  <div>
+    <div class="card" style="background:#fff;" onclick="this.style.borderColor=this.style.borderColor==='rgb(59, 130, 246)'?'transparent':'rgb(59, 130, 246)'">
+      <div class="m-nav">
+        <div class="m-logo">FERNANDO<span style="color:#3b82f6">.</span></div>
+        <div class="m-links"><span>Sobre</span><span>Experiência</span><span style="color:#3b82f6;font-weight:600;">Contato</span></div>
+      </div>
+      <div class="m-hero" style="background:#000;">
+        <div class="m-role" style="color:#3b82f6;">Full Stack Developer</div>
+        <div class="m-name">JOSÉ<br>FERNANDO</div>
+        <div class="m-line" style="background:#3b82f6;"></div>
+      </div>
+      <div class="m-bottom" style="background:#f5f5f5;">
+        <div class="m-col" style="border-right:1px solid #e5e5e5;">
+          <div class="m-label">Experiência</div>
+          <div class="m-value" style="color:#000;">+4 anos</div>
+        </div>
+        <div class="m-col">
+          <div class="m-label">Atual</div>
+          <div class="m-value" style="color:#000;">Grupo <span style="color:#3b82f6;">NEPEN</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="letter-badge" style="background:#3b82f6;">A</div>
+      <h3>Electric Blue</h3>
+      <p>Tecnológico e confiável. Funciona bem com o preto/branco sem competir.</p>
+    </div>
+  </div>
+
+  <!-- Violet -->
+  <div>
+    <div class="card" style="background:#fff;" onclick="this.style.borderColor=this.style.borderColor==='rgb(139, 92, 246)'?'transparent':'rgb(139, 92, 246)'">
+      <div class="m-nav">
+        <div class="m-logo">FERNANDO<span style="color:#8b5cf6">.</span></div>
+        <div class="m-links"><span>Sobre</span><span>Experiência</span><span style="color:#8b5cf6;font-weight:600;">Contato</span></div>
+      </div>
+      <div class="m-hero" style="background:#000;">
+        <div class="m-role" style="color:#8b5cf6;">Full Stack Developer</div>
+        <div class="m-name">JOSÉ<br>FERNANDO</div>
+        <div class="m-line" style="background:#8b5cf6;"></div>
+      </div>
+      <div class="m-bottom" style="background:#f5f5f5;">
+        <div class="m-col" style="border-right:1px solid #e5e5e5;">
+          <div class="m-label">Experiência</div>
+          <div class="m-value" style="color:#000;">+4 anos</div>
+        </div>
+        <div class="m-col">
+          <div class="m-label">Atual</div>
+          <div class="m-value" style="color:#000;">Grupo <span style="color:#8b5cf6;">NEPEN</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="letter-badge" style="background:#8b5cf6;">B</div>
+      <h3>Vibrant Violet</h3>
+      <p>Criativo e moderno. Roxo sobre preto/branco dá sofisticação.</p>
+    </div>
+  </div>
+
+  <!-- Neon Green -->
+  <div>
+    <div class="card" style="background:#fff;" onclick="this.style.borderColor=this.style.borderColor==='rgb(34, 197, 94)'?'transparent':'rgb(34, 197, 94)'">
+      <div class="m-nav">
+        <div class="m-logo">FERNANDO<span style="color:#22c55e">.</span></div>
+        <div class="m-links"><span>Sobre</span><span>Experiência</span><span style="color:#22c55e;font-weight:600;">Contato</span></div>
+      </div>
+      <div class="m-hero" style="background:#000;">
+        <div class="m-role" style="color:#22c55e;">Full Stack Developer</div>
+        <div class="m-name">JOSÉ<br>FERNANDO</div>
+        <div class="m-line" style="background:#22c55e;"></div>
+      </div>
+      <div class="m-bottom" style="background:#f5f5f5;">
+        <div class="m-col" style="border-right:1px solid #e5e5e5;">
+          <div class="m-label">Experiência</div>
+          <div class="m-value" style="color:#000;">+4 anos</div>
+        </div>
+        <div class="m-col">
+          <div class="m-label">Atual</div>
+          <div class="m-value" style="color:#000;">Grupo <span style="color:#22c55e;">NEPEN</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="letter-badge" style="background:#22c55e;">C</div>
+      <h3>Neon Green</h3>
+      <p>Ousado e dev-core. Verde neon grita "código" sem ser genérico.</p>
+    </div>
+  </div>
+
+  <!-- Hot Coral -->
+  <div>
+    <div class="card" style="background:#fff;" onclick="this.style.borderColor=this.style.borderColor==='rgb(244, 63, 94)'?'transparent':'rgb(244, 63, 94)'">
+      <div class="m-nav">
+        <div class="m-logo">FERNANDO<span style="color:#f43f5e">.</span></div>
+        <div class="m-links"><span>Sobre</span><span>Experiência</span><span style="color:#f43f5e;font-weight:600;">Contato</span></div>
+      </div>
+      <div class="m-hero" style="background:#000;">
+        <div class="m-role" style="color:#f43f5e;">Full Stack Developer</div>
+        <div class="m-name">JOSÉ<br>FERNANDO</div>
+        <div class="m-line" style="background:#f43f5e;"></div>
+      </div>
+      <div class="m-bottom" style="background:#f5f5f5;">
+        <div class="m-col" style="border-right:1px solid #e5e5e5;">
+          <div class="m-label">Experiência</div>
+          <div class="m-value" style="color:#000;">+4 anos</div>
+        </div>
+        <div class="m-col">
+          <div class="m-label">Atual</div>
+          <div class="m-value" style="color:#000;">Grupo <span style="color:#f43f5e;">NEPEN</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="letter-badge" style="background:#f43f5e;">D</div>
+      <h3>Hot Coral / Rose</h3>
+      <p>Energético e único. Coral sobre monocromático é raro e chama atenção.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

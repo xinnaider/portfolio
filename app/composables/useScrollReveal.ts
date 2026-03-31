@@ -1,6 +1,8 @@
 export function useScrollReveal() {
   const observer = ref<IntersectionObserver | null>(null)
 
+  const SELECTOR = '.reveal, .reveal-left, .reveal-right, .reveal-scale'
+
   onMounted(() => {
     observer.value = new IntersectionObserver(
       (entries) => {
@@ -21,7 +23,7 @@ export function useScrollReveal() {
       { threshold: 0.1 }
     )
 
-    document.querySelectorAll('.reveal').forEach((el) => {
+    document.querySelectorAll(SELECTOR).forEach((el) => {
       observer.value?.observe(el)
     })
   })
@@ -32,8 +34,10 @@ export function useScrollReveal() {
 
   function observeNew(container?: HTMLElement) {
     const root = container || document
-    root.querySelectorAll('.reveal:not(.visible)').forEach((el) => {
-      observer.value?.observe(el)
+    root.querySelectorAll(SELECTOR).forEach((el) => {
+      if (!el.classList.contains('visible')) {
+        observer.value?.observe(el)
+      }
     })
   }
 
