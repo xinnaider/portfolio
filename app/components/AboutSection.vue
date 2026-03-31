@@ -47,7 +47,7 @@ const highlights = [
         <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Quem sou</p>
       </div>
 
-      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-8 sm:mb-12">
+      <h2 class="reveal font-display font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-black tracking-tight mb-8 sm:mb-12">
         SOBRE
       </h2>
 

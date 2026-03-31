@@ -79,7 +79,7 @@ const experiences = [
         <p class="reveal text-accent text-xs sm:text-sm font-semibold uppercase tracking-[2px] sm:tracking-[4px]">Trajetória</p>
       </div>
 
-      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-10 sm:mb-16">
+      <h2 class="reveal font-display font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-10 sm:mb-16">
         EXPERIÊNCIA
       </h2>
 
