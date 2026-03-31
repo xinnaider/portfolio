@@ -5,7 +5,7 @@ const { download, isGenerating } = useDownloadCv()
 </script>
 
 <template>
-  <section id="hero" class="relative min-h-dvh flex items-center overflow-hidden bg-[#0a0a0a] border-b-2 border-white">
+  <section class="relative min-h-dvh flex items-center overflow-hidden bg-[#0a0a0a] border-b-2 border-white">
     <!-- Manga decorations -->
     <MangaSpeedLines />
     <MangaKanji text="開発者" position="top-right" vertical size="lg" />
