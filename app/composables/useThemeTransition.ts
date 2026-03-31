@@ -1,4 +1,3 @@
-import { Theme } from './useTheme'
 
 interface Fragment {
   id: number
@@ -77,21 +76,6 @@ export function useThemeTransition() {
     prefersReducedMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   })
 
-  async function triggerPanelShatter(onSwapTheme: () => void): Promise<void> {
-    isTransitioning.value = true
-    try {
-      await new Promise(resolve => setTimeout(resolve, 700))
-      onSwapTheme()
-
-      const isMobile = window.innerWidth < 640
-      const totalDuration = isMobile ? 1000 : 1500
-      await new Promise(resolve => setTimeout(resolve, totalDuration - 700))
-    }
-    finally {
-      isTransitioning.value = false
-    }
-  }
-
   async function triggerInkSplash(onSwapTheme: () => void): Promise<void> {
     isInkSplashing.value = true
     try {
@@ -105,7 +89,6 @@ export function useThemeTransition() {
   }
 
   async function triggerTransition(onSwapTheme: () => void): Promise<void> {
-    const { theme } = useTheme()
     if (isTransitioning.value || isInkSplashing.value) return
 
     if (prefersReducedMotion.value) {

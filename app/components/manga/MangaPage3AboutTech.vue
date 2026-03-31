@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 const yearsCounter = useCounter(5, 1800)
 const projectsCounter = useCounter(20, 1800)
 

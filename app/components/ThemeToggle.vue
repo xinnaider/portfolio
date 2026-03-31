@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { theme, toggleTheme, isManga } = useTheme()
+const { toggleTheme, isManga } = useTheme()
 </script>
 
 <template>

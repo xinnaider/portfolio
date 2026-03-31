@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t, tm, rt } = useI18n()
+const { tm, rt } = useI18n()
 
 interface EducationEntry {
   title: string
@@ -106,7 +106,7 @@ const currentYear = new Date().getFullYear()
             style="display:block; border:3px solid #fff; text-align:center; padding:clamp(10px,2vw,18px); font-size:clamp(14px,2vw,22px); font-weight:900; color:#fff; letter-spacing:2px; text-decoration:none; font-family:'Courier New',monospace; position:relative;"
           >
             {{ $t('manga.sendMessage') }} →
-            <span style="position:absolute; inset:-5px; border:1px solid #333; pointer-events:none;" aria-hidden="true"></span>
+            <span style="position:absolute; inset:-5px; border:1px solid #333; pointer-events:none;" aria-hidden="true" />
           </a>
         </div>
       </div>
