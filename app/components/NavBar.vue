@@ -6,6 +6,7 @@ const links = [
   { label: 'Contato', href: '#contato' }
 ]
 
+const { download, isGenerating } = useDownloadCv()
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
 let ticking = false
@@ -57,6 +58,13 @@ onUnmounted(() => {
         >
           {{ link.label }}
         </a>
+        <button
+          class="text-sm text-accent border border-accent/40 rounded-lg px-4 py-1.5 hover:bg-accent/10 transition-colors duration-200"
+          :disabled="isGenerating"
+          @click="download"
+        >
+          {{ isGenerating ? 'Gerando...' : 'Currículo' }}
+        </button>
       </div>
 
       <!-- Mobile hamburger -->
@@ -103,6 +111,13 @@ onUnmounted(() => {
           >
             {{ link.label }}
           </a>
+          <button
+            class="text-base text-accent border border-accent/40 rounded-lg px-4 py-2 hover:bg-accent/10 transition-colors duration-200 text-left"
+            :disabled="isGenerating"
+            @click="download(); closeMenu()"
+          >
+            {{ isGenerating ? 'Gerando...' : 'Currículo' }}
+          </button>
         </div>
       </div>
     </Transition>
