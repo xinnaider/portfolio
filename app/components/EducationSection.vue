@@ -3,7 +3,7 @@ const { scrollY } = useScrollProgress()
 </script>
 
 <template>
-  <section class="relative bg-surface-black py-24 lg:py-36 overflow-hidden">
+  <section id="formacao" class="relative bg-surface-black py-24 lg:py-36 overflow-hidden">
     <!-- Background texture -->
     <div
       class="absolute right-[-20px] font-display font-extrabold text-[80px] lg:text-[140px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
@@ -46,13 +46,12 @@ const { scrollY } = useScrollProgress()
               <p class="text-accent text-sm font-semibold mt-1">
                 Universidade Cruzeiro do Sul
               </p>
-              <p class="text-white/50 text-xs uppercase tracking-widest mt-1">
+              <p class="text-white/60 text-xs uppercase tracking-widest mt-1">
                 Em andamento · Previsão: Jul 2027
               </p>
               <p class="text-white/80 text-[15px] mt-4 leading-relaxed">
                 Transferência do IFRO após mudança para São Paulo. Continuação da formação em desenvolvimento de software, engenharia de software, banco de dados e infraestrutura de TI.
               </p>
-              <div class="w-[60px] h-[3px] bg-accent mt-6" />
             </div>
           </div>
         </div>
@@ -70,7 +69,7 @@ const { scrollY } = useScrollProgress()
               <p class="text-white/60 text-sm font-semibold mt-1">
                 Instituto Federal de Rondônia (IFRO)
               </p>
-              <p class="text-white/50 text-xs uppercase tracking-widest mt-1">
+              <p class="text-white/60 text-xs uppercase tracking-widest mt-1">
                 Até o 4º período · Transferido para Cruzeiro do Sul
               </p>
             </div>

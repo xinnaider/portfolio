@@ -25,8 +25,16 @@ export default defineNuxtConfig({
           crossorigin: ''
         },
         {
+          rel: 'preload',
+          as: 'style',
+          href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap',
+          onload: "this.onload=null;this.rel='stylesheet'"
+        },
+        {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap',
+          media: 'print',
+          onload: "this.media='all'"
         }
       ],
       meta: [

@@ -4,7 +4,9 @@ const { scrollY } = useScrollProgress()
 const experiences = [
   {
     company: 'Grupo NEPEN',
+    description: 'ICT especializado em soluções de monitoramento e gestão de dispositivos IoT.',
     role: 'Desenvolvedor Full Stack',
+    badge: 'Pleno',
     period: 'Mai 2024 – Atual',
     tags: ['Vue.js', 'Spring Boot', '.NET', 'RabbitMQ', 'SNMP', 'LwM2M'],
     items: [
@@ -17,9 +19,12 @@ const experiences = [
   },
   {
     company: 'Eficiência Fiscal',
-    role: 'Pleno Fullstack Developer',
-    period: 'Jul 2022 – Abr 2024',
+    description: 'Startup focada em automação fiscal e tributária para empresas de médio e grande porte.',
+    role: 'Desenvolvedor Full Stack',
+    badge: 'Junior → Pleno',
+    period: 'Mai 2023 – Ago 2025',
     tags: ['Laravel', 'PHP', 'Python', 'Java', 'Electron', 'DevOps'],
+    promotion: { from: 'Junior', to: 'Pleno', date: 'Ago 2024' },
     items: [
       'Desenvolvimento de funcionalidades utilizando Laravel, PHP, JavaScript, Python, Java e Electron.',
       'Implementação de rotinas de web scraping para extração automatizada de dados fiscais.',
@@ -30,8 +35,10 @@ const experiences = [
   },
   {
     company: 'PROINFE',
-    role: 'Full Stack Developer',
-    period: 'Fev 2022 – Jul 2022',
+    description: 'Projeto de pesquisa e extensão do Instituto Federal de Rondônia (IFRO) voltado ao desenvolvimento de soluções tecnológicas para a comunidade.',
+    role: 'Desenvolvedor Full Stack',
+    badge: 'Bolsista',
+    period: 'Ago 2023 – Ago 2024',
     tags: ['Next.js', 'Nest.js', 'Docker', 'Material UI'],
     items: [
       'Desenvolvimento de frontend utilizando Next.js e Material UI.',
@@ -105,8 +112,14 @@ const experiences = [
               class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 hover:border-accent/20 transition-all duration-300"
               :data-stagger="index"
             >
-              <h3 class="font-display font-bold text-xl md:text-2xl text-white">{{ exp.company }}</h3>
+              <div class="flex items-center gap-3 flex-wrap">
+                <h3 class="font-display font-bold text-xl md:text-2xl text-white">{{ exp.company }}</h3>
+                <span class="px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider rounded-full border border-accent/40 text-accent bg-accent/10">
+                  {{ exp.badge }}
+                </span>
+              </div>
               <p class="text-accent text-sm mt-1 font-semibold">{{ exp.role }}</p>
+              <p class="text-white/60 text-[13px] mt-2 leading-relaxed">{{ exp.description }}</p>
 
               <ul class="space-y-3 mt-5 mb-6">
                 <li
@@ -117,6 +130,17 @@ const experiences = [
                   {{ item }}
                 </li>
               </ul>
+
+              <!-- Promotion timeline -->
+              <div v-if="exp.promotion" class="flex items-center gap-3 my-5 py-3 px-4 rounded-lg bg-accent/[0.06] border border-accent/15">
+                <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">{{ exp.promotion.from }}</span>
+                <div class="flex items-center gap-1.5 flex-1">
+                  <div class="h-[1px] flex-1 bg-accent/30" />
+                  <span class="text-accent text-[11px] font-semibold whitespace-nowrap">{{ exp.promotion.date }}</span>
+                  <div class="h-[1px] flex-1 bg-accent/30" />
+                </div>
+                <span class="text-accent text-xs font-semibold uppercase tracking-wider">{{ exp.promotion.to }}</span>
+              </div>
 
               <!-- Tech tags -->
               <div class="flex flex-wrap gap-2 pt-4 border-t border-white/[0.08]">

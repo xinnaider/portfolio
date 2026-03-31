@@ -10,6 +10,8 @@ const { progress } = useScrollProgress()
 
 <template>
   <div>
+    <a href="#sobre" class="skip-to-content">Pular para o conteúdo</a>
+
     <!-- Scroll progress bar -->
     <div
       class="scroll-progress"

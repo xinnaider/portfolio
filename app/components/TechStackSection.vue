@@ -4,22 +4,18 @@ const { scrollY } = useScrollProgress()
 const categories = [
   {
     label: 'Linguagens',
-    icon: '⟨/⟩',
     items: ['Java', 'PHP', 'JavaScript', 'Python', 'Node.js', 'C# (.NET)']
   },
   {
     label: 'Frameworks',
-    icon: '◇',
     items: ['Spring Boot', 'Laravel', 'Nest.js', 'Vue.js', 'Next.js', 'Electron']
   },
   {
     label: 'Arquitetura',
-    icon: '⬡',
     items: ['Microservices', 'REST APIs', 'RabbitMQ', 'API Gateway', 'Eureka']
   },
   {
     label: 'Infra & Outros',
-    icon: '⚙',
     items: ['Docker', 'DevOps', 'Web Scraping', 'SNMP', 'LwM2M']
   }
 ]
@@ -59,8 +55,15 @@ const categories = [
         >
           <div class="p-6 bg-white rounded-xl border border-border-light hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 h-full">
             <!-- Category icon -->
-            <div class="w-10 h-10 rounded-lg bg-surface-light flex items-center justify-center text-accent font-mono text-sm mb-4 group-hover:bg-accent/10 transition-colors duration-300">
-              {{ category.icon }}
+            <div class="w-10 h-10 rounded-lg bg-surface-light flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors duration-300">
+              <!-- Linguagens -->
+              <svg v-if="catIndex === 0" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+              <!-- Frameworks -->
+              <svg v-else-if="catIndex === 1" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+              <!-- Arquitetura -->
+              <svg v-else-if="catIndex === 2" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>
+              <!-- Infra -->
+              <svg v-else class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
             </div>
 
             <h3 class="font-display font-bold text-base text-black mb-5">
@@ -71,7 +74,7 @@ const categories = [
               <span
                 v-for="item in category.items"
                 :key="item"
-                class="px-3 py-1.5 bg-surface-light rounded-lg text-xs text-black/60 font-medium hover:bg-accent/10 hover:text-accent transition-colors duration-200 cursor-default"
+                class="px-3 py-1.5 bg-surface-light rounded-lg text-xs text-black/70 font-medium"
               >
                 {{ item }}
               </span>

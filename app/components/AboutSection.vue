@@ -2,7 +2,6 @@
 const yearsCounter = useCounter(4, 2000)
 const companiesCounter = useCounter(3, 2000)
 const languagesCounter = useCounter(6, 2000)
-const projectsCounter = useCounter(20, 2000)
 
 const countersRef = ref<HTMLElement | null>(null)
 
@@ -14,8 +13,7 @@ onMounted(() => {
           yearsCounter.animate()
           companiesCounter.animate()
           languagesCounter.animate()
-          projectsCounter.animate()
-          observer.unobserve(entry.target)
+observer.unobserve(entry.target)
         }
       })
     },
@@ -28,10 +26,10 @@ onMounted(() => {
 })
 
 const highlights = [
-  { icon: '{ }', title: 'Backend Robusto', desc: 'APIs REST, microsserviços com Spring Boot, .NET e Nest.js. Comunicação assíncrona com RabbitMQ.' },
-  { icon: '◈', title: 'Frontend Moderno', desc: 'Interfaces reativas com Vue.js e Next.js. Experiência com Electron para apps desktop.' },
-  { icon: '⬡', title: 'Infraestrutura', desc: 'Docker, DevOps, integração com dispositivos via SNMP e LwM2M. Sistemas de alta disponibilidade.' },
-  { icon: '↗', title: 'Dados em Escala', desc: 'Migração de bancos 4TB+, web scraping automatizado, processamento de documentos fiscais em larga escala.' }
+  { title: 'Backend Robusto', desc: 'APIs REST, microsserviços com Spring Boot, .NET e Nest.js. Comunicação assíncrona com RabbitMQ.' },
+  { title: 'Frontend Moderno', desc: 'Interfaces reativas com Vue.js e Next.js. Experiência com Electron para apps desktop.' },
+  { title: 'Infraestrutura', desc: 'Docker, DevOps, integração com dispositivos via SNMP e LwM2M. Sistemas de alta disponibilidade.' },
+  { title: 'Dados em Escala', desc: 'Migração de bancos 4TB+, web scraping automatizado, processamento de documentos fiscais em larga escala.' }
 ]
 </script>
 
@@ -75,7 +73,7 @@ const highlights = [
         <div>
           <div
             ref="countersRef"
-            class="grid grid-cols-2 gap-8"
+            class="grid grid-cols-3 gap-8"
           >
             <div class="reveal border-l-2 border-accent pl-6" data-stagger="1">
               <span class="font-display font-extrabold text-5xl lg:text-6xl text-black">+{{ yearsCounter.count.value }}</span>
@@ -89,10 +87,6 @@ const highlights = [
               <span class="font-display font-extrabold text-5xl lg:text-6xl text-black">{{ languagesCounter.count.value }}+</span>
               <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Linguagens</p>
             </div>
-            <div class="reveal border-l-2 border-black/10 pl-6" data-stagger="4">
-              <span class="font-display font-extrabold text-5xl lg:text-6xl text-black">{{ projectsCounter.count.value }}+</span>
-              <p class="text-text-muted text-xs uppercase tracking-[3px] mt-2">Projetos</p>
-            </div>
           </div>
         </div>
       </div>
@@ -105,8 +99,15 @@ const highlights = [
           class="reveal-scale group p-6 bg-white border border-border-light rounded-xl hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
           :data-stagger="index + 1"
         >
-          <div class="w-10 h-10 rounded-lg bg-surface-light flex items-center justify-center text-accent font-display font-bold text-lg mb-4 group-hover:bg-accent/10 transition-colors duration-300">
-            {{ item.icon }}
+          <div class="w-10 h-10 rounded-lg bg-surface-light flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors duration-300">
+            <!-- Backend -->
+            <svg v-if="index === 0" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+            <!-- Frontend -->
+            <svg v-else-if="index === 1" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <!-- Infra -->
+            <svg v-else-if="index === 2" class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+            <!-- Dados -->
+            <svg v-else class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
           </div>
           <h3 class="font-display font-bold text-base text-black mb-2">{{ item.title }}</h3>
           <p class="text-text-muted text-sm leading-relaxed">{{ item.desc }}</p>
