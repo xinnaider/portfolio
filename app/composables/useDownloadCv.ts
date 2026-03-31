@@ -17,10 +17,10 @@ export const useDownloadCv = () => {
       return
     }
 
-    const styles = el.querySelector('style')?.textContent || ''
-    const scopedStyles = Array.from(document.querySelectorAll('style'))
-      .map(s => s.textContent)
-      .join('\n')
+    // Clone and remove the inline hide style
+    const clone = el.cloneNode(true) as HTMLElement
+    clone.removeAttribute('style')
+    const html = clone.outerHTML
 
     printWindow.document.write(`<!DOCTYPE html>
 <html>
@@ -171,7 +171,7 @@ export const useDownloadCv = () => {
   }
 </style>
 </head>
-<body>${el.outerHTML}</body>
+<body>${html}</body>
 </html>`)
 
     printWindow.document.close()
