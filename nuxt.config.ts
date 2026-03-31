@@ -53,7 +53,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: '/analytics/script.js',
+          src: 'https://analytics.jfernando.dev/script.js',
           async: true,
           'data-website-id': process.env.UMAMI_WEBSITE_ID || ''
         }
