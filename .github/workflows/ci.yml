@@ -21,6 +21,9 @@ jobs:
 
       - run: pnpm install
 
+      - name: Prepare Nuxt
+        run: pnpm exec nuxt prepare
+
       - name: Lint
         run: pnpm lint
 
