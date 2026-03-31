@@ -30,19 +30,19 @@ const { scrollY } = useScrollProgress()
         FORMAÇÃO
       </h2>
 
-      <div class="reveal gradient-border bg-border-dark/30 rounded-xl p-8 lg:p-12 max-w-2xl" data-stagger="1">
+      <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 lg:p-12 max-w-2xl hover:border-accent/20 transition-all duration-300" data-stagger="1">
         <div class="flex items-start gap-6">
           <div class="hidden sm:flex w-14 h-14 rounded-xl bg-accent/10 items-center justify-center flex-shrink-0">
             <span class="text-accent font-display font-bold text-xl">IF</span>
           </div>
           <div>
-            <p class="font-display font-bold text-2xl text-white">
+            <p class="font-display font-bold text-xl md:text-2xl text-white">
               Análise e Desenvolvimento de Sistemas
             </p>
             <p class="text-accent text-sm font-semibold mt-2">
               Instituto Federal de Rondônia (IFRO)
             </p>
-            <p class="text-white/40 text-sm mt-4 leading-relaxed">
+            <p class="text-white/80 text-[15px] mt-4 leading-relaxed">
               Formação focada em desenvolvimento de software, banco de dados, engenharia de software e infraestrutura de TI.
             </p>
             <div class="w-[60px] h-[3px] bg-accent mt-6" />
