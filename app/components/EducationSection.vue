@@ -75,6 +75,25 @@ const { scrollY } = useScrollProgress()
             </div>
           </div>
         </div>
+        <!-- Ensino Médio Técnico -->
+        <div class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 hover:border-accent/20 transition-all duration-300" data-stagger="3">
+          <div class="flex items-start gap-3 sm:gap-6">
+            <div class="hidden sm:flex w-14 h-14 rounded-xl bg-white/[0.05] items-center justify-center flex-shrink-0">
+              <span class="text-white/60 font-display font-bold text-xl">IF</span>
+            </div>
+            <div>
+              <p class="font-display font-bold text-base sm:text-xl md:text-2xl text-white">
+                Ensino Médio Técnico em Informática
+              </p>
+              <p class="text-white/60 text-xs sm:text-sm font-semibold mt-1">
+                Instituto Federal de Rondônia (IFRO)
+              </p>
+              <p class="text-white/60 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest mt-1">
+                Concluído em 2022
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
