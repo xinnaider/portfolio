@@ -1,6 +1,11 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 useHead({
-  title: 'José Fernando — Full Stack Developer'
+  title: 'José Fernando — Full Stack Developer',
+  meta: [
+    { name: 'description', content: () => t('meta.description') }
+  ]
 })
 
 useScrollReveal()
@@ -10,7 +15,7 @@ const { progress } = useScrollProgress()
 
 <template>
   <div>
-    <a href="#sobre" class="skip-to-content">Pular para o conteúdo</a>
+    <a href="#sobre" class="skip-to-content">{{ $t('skip') }}</a>
 
     <div
       class="scroll-progress"
