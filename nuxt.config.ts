@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n'],
 
   css: ['~/assets/css/main.css'],
 
@@ -12,9 +12,20 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
 
+  i18n: {
+    locales: [
+      { code: 'pt-BR', language: 'pt-BR', name: 'Português', file: 'pt-BR.json' },
+      { code: 'en', language: 'en', name: 'English', file: 'en.json' },
+    ],
+    defaultLocale: 'pt-BR',
+    strategy: 'prefix_except_default',
+    lazy: true,
+    langDir: 'locales/',
+    detectBrowserLanguage: false,
+  },
+
   app: {
     head: {
-      htmlAttrs: { lang: 'pt-BR' },
       link: [
         {
           rel: 'icon',
@@ -47,9 +58,6 @@ export default defineNuxtConfig({
           media: 'print',
           onload: "this.media='all'"
         }
-      ],
-      meta: [
-        { name: 'description', content: 'José Fernando — Desenvolvedor Full Stack' }
       ],
       script: [
         {

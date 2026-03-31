@@ -13,6 +13,7 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^10.2.4",
     "@tailwindcss/vite": "^4.2.2",
     "html2canvas": "^1.4.1",
     "jspdf": "^4.2.1",
