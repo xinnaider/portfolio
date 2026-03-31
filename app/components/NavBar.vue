@@ -101,7 +101,6 @@ onUnmounted(() => {
             EN
           </NuxtLink>
         </div>
-        <ThemeToggle />
       </div>
 
       <button
@@ -172,9 +171,6 @@ onUnmounted(() => {
             >
               EN
             </NuxtLink>
-          </div>
-          <div class="flex items-center gap-3 pt-2">
-            <ThemeToggle />
           </div>
         </div>
       </div>

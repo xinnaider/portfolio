@@ -37,7 +37,7 @@ watch(theme, async () => {
       :style="{ width: `${progress * 100}%` }"
     />
 
-    <NavBar />
+    <NavBar v-if="theme === Theme.VIOLET" />
     <component :is="currentLayout" :key="theme" />
     <FloatingPanel />
     <PanelShatter />

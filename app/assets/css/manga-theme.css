@@ -139,11 +139,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 14px;
-  font-size: 10px;
+  padding: 10px 24px;
+  font-size: 11px;
   font-family: 'Courier New', monospace;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   flex-shrink: 0;
+  gap: 16px;
 }
 
 [data-theme="manga"] .manga-page-num {
@@ -178,8 +179,8 @@
   background: #000;
   color: #fff;
   font-family: 'Courier New', monospace;
-  font-size: 9px;
-  padding: 5px 14px;
+  font-size: 10px;
+  padding: 7px 24px;
   letter-spacing: 1px;
   flex-shrink: 0;
 }
@@ -294,9 +295,98 @@
   color: #fff;
 }
 
-/* ─── Mobile overrides ─────────────────────────────────────────── */
+/* ─── Mobile overrides (≤ 639px) ──────────────────────────────── */
 @media (max-width: 639px) {
+  /* Shrink the page header on mobile — more breathing room */
+  [data-theme="manga"] .manga-page-header {
+    padding: 8px 16px !important;
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Hide narration bars — saves ~20px per page */
+  [data-theme="manga"] .manga-narration {
+    display: none !important;
+  }
+
+  /* Hide chapter bar in page 3 to give Arsenal full remaining height */
+  [data-theme="manga"] .manga-chapter-bar {
+    display: none !important;
+  }
+
+  /* Hide decorative SFX */
   [data-theme="manga"] .manga-sfx-hide-mobile {
     display: none;
+  }
+
+  /* ── Page 1: Hero ───────────────────────────────────────────── */
+  [data-theme="manga"] .manga-hero-badge {
+    display: none !important;
+  }
+
+  [data-theme="manga"] .manga-hero-name {
+    top: 20px !important;
+    left: 20px !important;
+  }
+
+  [data-theme="manga"] .manga-hero-bubble {
+    left: 20px !important;
+    right: auto !important;
+    bottom: 70px !important;
+    max-width: 220px !important;
+  }
+
+  [data-theme="manga"] .manga-hero-cta {
+    left: 20px !important;
+    bottom: 20px !important;
+  }
+
+  /* ── Page 2: Experience ─────────────────────────────────────── */
+  /* Single column — only current job */
+  [data-theme="manga"] .manga-exp-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-theme="manga"] .manga-exp-side {
+    display: none !important;
+  }
+
+  /* ── Page 3: About / Tech ───────────────────────────────────── */
+  /* Bio + counters as a compact row (side by side), tech fills rest */
+  [data-theme="manga"] .manga-about-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: unset !important;
+    height: 38% !important;
+  }
+
+  /* Keep right border between bio and counters (they're side by side) */
+  [data-theme="manga"] .manga-about-grid > :first-child {
+    border-right: 3px solid #000 !important;
+    border-bottom: none !important;
+  }
+
+  /* Counters column: stack vertically within their half */
+  [data-theme="manga"] .manga-counters-panel {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  [data-theme="manga"] .manga-counters-panel > div + div {
+    border-top: 1px solid #333 !important;
+    border-left: none !important;
+    padding-top: 12px !important;
+  }
+
+  /* ── Page 4: Education / Contact ────────────────────────────── */
+  [data-theme="manga"] .manga-edu-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    overflow-y: hidden !important;
+  }
+
+  [data-theme="manga"] .manga-edu-grid > :first-child {
+    border-right: none !important;
+    border-bottom: 3px solid #000 !important;
   }
 }

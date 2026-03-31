@@ -114,11 +114,7 @@ export function useThemeTransition() {
       return
     }
 
-    if (theme.value === Theme.VIOLET) {
-      await triggerInkSplash(onSwapTheme)
-    } else {
-      await triggerPanelShatter(onSwapTheme)
-    }
+    await triggerInkSplash(onSwapTheme)
   }
 
   return {

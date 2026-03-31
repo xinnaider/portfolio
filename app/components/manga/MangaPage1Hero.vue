@@ -18,25 +18,21 @@ const { download, isGenerating } = useDownloadCv()
       <div class="manga-speed-radial" aria-hidden="true" />
 
       <!-- Halftone bottom-left -->
-      <div
-        class="manga-ht"
-        style="bottom:0; left:0; width:45%; height:60%;"
-        aria-hidden="true"
-      />
+      <div class="manga-ht" style="bottom:0; left:0; width:50%; height:65%;" aria-hidden="true" />
 
       <!-- Kanji 開 huge background -->
       <div
         class="manga-kanji"
-        style="bottom:-40px; right:-20px; font-size:clamp(160px, 30vw, 260px);"
+        style="bottom:-60px; right:-30px; font-size:clamp(240px, 44vw, 520px);"
         aria-hidden="true"
       >開</div>
 
       <!-- Status badge — top right -->
-      <div style="position:absolute; top:16px; right:16px; width:clamp(120px,20vw,160px); z-index:2;">
-        <div style="background:#000; color:#fff; padding:5px 10px; font-size:9px; font-family:'Courier New',monospace; letter-spacing:2px; text-align:center; margin-bottom:6px; border:3px solid #000;">
+      <div class="manga-hero-badge" style="position:absolute; top:28px; right:28px; width:clamp(180px,26vw,300px); z-index:2;">
+        <div style="background:#000; color:#fff; padding:8px 14px; font-size:clamp(11px,1.5vw,17px); font-family:'Courier New',monospace; letter-spacing:2px; text-align:center; margin-bottom:10px; border:3px solid #000;">
           FULL STACK DEV
         </div>
-        <div style="border:3px solid #000; padding:8px 10px; font-size:9px; line-height:2; background:#fff; font-family:'Courier New',monospace;">
+        <div style="border:3px solid #000; padding:12px 14px; font-size:clamp(13px,1.6vw,19px); line-height:2.4; background:#fff; font-family:'Courier New',monospace;">
           Java · Spring Boot<br>
           Vue.js · Nuxt 4<br>
           Laravel · MySQL<br>
@@ -45,13 +41,13 @@ const { download, isGenerating } = useDownloadCv()
       </div>
 
       <!-- Name — large, top-left -->
-      <div style="position:absolute; top:16px; left:20px; z-index:2;">
-        <div class="manga-meta" style="margin-bottom:8px;">— {{ $t('meta.title') }} —</div>
+      <div class="manga-hero-name" style="position:absolute; top:28px; left:32px; z-index:2;">
+        <div class="manga-meta" style="margin-bottom:14px; font-size:clamp(11px,1.4vw,16px);">— {{ $t('meta.title') }} —</div>
         <div
           class="manga-title"
-          style="font-size:clamp(36px, 8vw, 64px); line-height:0.85; letter-spacing:-3px;"
+          style="font-size:clamp(72px, 14vw, 180px); line-height:0.82; letter-spacing:-4px;"
         >J.<br>FER<br>NAN<br>DO</div>
-        <div style="font-size:14px; font-weight:600; color:#555; margin-top:8px; font-family:'Courier New',monospace; letter-spacing:1px;">
+        <div style="font-size:clamp(16px,2.2vw,28px); font-weight:600; color:#555; margin-top:18px; font-family:'Courier New',monospace; letter-spacing:1px;">
           {{ $t('hero.subtitle') }}
         </div>
       </div>
@@ -59,21 +55,22 @@ const { download, isGenerating } = useDownloadCv()
       <!-- Onomatopeia ドン！ bottom-left -->
       <div
         class="manga-sfx manga-sfx-hide-mobile"
-        style="position:absolute; bottom:60px; left:16px; font-size:clamp(32px,7vw,56px); transform:rotate(-4deg); opacity:0.85;"
+        style="position:absolute; bottom:90px; left:32px; font-size:clamp(64px,12vw,140px); transform:rotate(-4deg); opacity:0.9;"
         aria-hidden="true"
       >ドン！</div>
 
       <!-- Speech bubble bottom-right -->
       <div
-        class="manga-bubble"
-        style="position:absolute; bottom:28px; right:16px; max-width:clamp(140px,25vw,180px); z-index:2;"
+        class="manga-bubble manga-hero-bubble"
+        style="position:absolute; bottom:40px; right:28px; max-width:clamp(180px,32vw,300px); font-size:clamp(13px,1.8vw,20px); z-index:2;"
       >
         {{ $t('manga.bubble.hero') }}
       </div>
 
       <!-- CV download button — bottom-left -->
       <button
-        style="position:absolute; bottom:16px; left:16px; border:2px solid #000; background:#fff; padding:4px 10px; font-size:9px; font-family:'Courier New',monospace; letter-spacing:2px; cursor:pointer; z-index:2;"
+        class="manga-hero-cta"
+        style="position:absolute; bottom:28px; left:32px; border:2px solid #000; background:#fff; padding:8px 18px; font-size:clamp(12px,1.5vw,17px); font-family:'Courier New',monospace; letter-spacing:2px; cursor:pointer; z-index:2;"
         :disabled="isGenerating"
         @click="download"
       >
