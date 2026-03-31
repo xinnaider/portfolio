@@ -51,7 +51,7 @@ const techStack = {
         <div class="manga-speed-radial" style="opacity:0.2;" aria-hidden="true" />
         <div class="manga-kanji" style="bottom:-20px; right:-10px; font-size:clamp(60px,10vw,110px);" aria-hidden="true">自</div>
 
-        <div class="manga-narration" style="margin-bottom:10px; position:relative; z-index:1;">{{ $t('manga.profileLabel') }}</div>
+        <div class="manga-meta" style="margin-bottom:10px; position:relative; z-index:1;">{{ $t('manga.profileLabel') }}</div>
         <p style="font-size:clamp(9px,1.2vw,11px); line-height:1.7; color:#000; position:relative; z-index:1; max-width:480px;">
           {{ $t('about.bio1') }}
         </p>

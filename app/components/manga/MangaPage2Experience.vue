@@ -99,7 +99,7 @@ const experiences = computed(() => tm('experience.jobs') as Experience[])
     <!-- SFX divider -->
     <div style="border-top:3px solid #000; padding:6px 14px; display:flex; justify-content:space-between; align-items:center; background:#fff; flex-shrink:0;">
       <div class="manga-sfx manga-sfx-hide-mobile" style="font-size:24px; opacity:0.2; transform:rotate(-2deg);" aria-hidden="true">ズーン</div>
-      <div class="manga-meta" style="letter-spacing:4px;">▼ {{ $t('manga.chapter.3').split('—')[1]?.trim() }}</div>
+      <div class="manga-meta" style="letter-spacing:4px;">▼ {{ $t('manga.nextChapterHint') }}</div>
       <div class="manga-sfx manga-sfx-hide-mobile" style="font-size:24px; opacity:0.2; transform:rotate(2deg);" aria-hidden="true">バン</div>
     </div>
 

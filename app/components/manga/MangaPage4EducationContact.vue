@@ -78,6 +78,7 @@ const currentYear = new Date().getFullYear()
               href="https://github.com/jfernandodev"
               target="_blank"
               rel="noopener noreferrer"
+              :aria-label="$t('contact.githubAria')"
               style="font-size:clamp(9px,1.5vw,11px); font-weight:bold; color:#fff; display:flex; align-items:center; gap:6px; text-decoration:none;"
             >
               <span style="border:1px solid #555; padding:1px 5px; font-size:8px; color:#888; font-family:'Courier New',monospace;">GH</span>

@@ -1,6 +1,7 @@
 {
   "meta": {
-    "description": "José Fernando — Desenvolvedor Full Stack"
+    "description": "José Fernando — Desenvolvedor Full Stack",
+    "title": "PORTFÓLIO"
   },
   "skip": "Pular para o conteúdo",
   "nav": {
@@ -139,6 +140,7 @@
     "title2": "CONVERSAR",
     "description": "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades de fazer parte da sua equipe.",
     "linkedinAria": "LinkedIn de José Fernando",
+    "githubAria": "GitHub de José Fernando",
     "location": "São Paulo – SP, Brasil",
     "copyright": "© {year} José Fernando Gomes Marcial"
   },
@@ -173,6 +175,7 @@
     "infraLabel": "INFRA & DB",
     "sendMessage": "ENVIAR MENSAGEM",
     "yearsExp": "Anos de Exp.",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "nextChapterHint": "PERFIL & ARSENAL"
   }
 }

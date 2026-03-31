@@ -1,6 +1,7 @@
 {
   "meta": {
-    "description": "José Fernando — Full Stack Developer"
+    "description": "José Fernando — Full Stack Developer",
+    "title": "PORTFOLIO"
   },
   "skip": "Skip to content",
   "nav": {
@@ -139,6 +140,7 @@
     "title2": "TALK",
     "description": "I'm always open to discussing new projects, creative ideas, or opportunities to join your team.",
     "linkedinAria": "José Fernando's LinkedIn",
+    "githubAria": "José Fernando's GitHub",
     "location": "São Paulo – SP, Brazil",
     "copyright": "© {year} José Fernando Gomes Marcial"
   },
@@ -173,6 +175,7 @@
     "infraLabel": "INFRA & DB",
     "sendMessage": "SEND MESSAGE",
     "yearsExp": "Years Exp.",
-    "projects": "Projects"
+    "projects": "Projects",
+    "nextChapterHint": "PROFILE & ARSENAL"
   }
 }
