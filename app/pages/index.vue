@@ -25,6 +25,5 @@ const { progress } = useScrollProgress()
     <TechStackSection />
     <EducationSection />
     <ContactSection />
-    <CvTemplate />
   </div>
 </template>
