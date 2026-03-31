@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
+const { isManga, initTheme } = useTheme()
 const switchLocalePath = useSwitchLocalePath()
 
 const navKeys = ['about', 'experience', 'tech', 'contact'] as const
@@ -34,6 +35,7 @@ const closeMenu = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', onScroll, { passive: true })
+  initTheme()
 })
 
 onUnmounted(() => {
@@ -48,7 +50,13 @@ onUnmounted(() => {
   >
     <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
       <a href="#" class="font-display font-extrabold text-xl text-white tracking-tight" :aria-label="$t('nav.backToTop')">
-        jfernando<span class="text-accent">.dev</span>
+        <template v-if="isManga">
+          <span class="border-2 border-white px-2 py-0.5">JF</span>
+          <span class="text-xs text-white/40 ml-2">ポートフォリオ</span>
+        </template>
+        <template v-else>
+          jfernando<span class="text-accent">.dev</span>
+        </template>
       </a>
 
       <div class="hidden md:flex items-center gap-8">
@@ -56,12 +64,16 @@ onUnmounted(() => {
           v-for="link in links"
           :key="link.href"
           :href="link.href"
-          class="text-sm text-text-muted hover:text-accent transition-colors duration-200 py-2 px-1"
+          class="text-sm text-text-muted transition-colors duration-200 py-2 px-1"
+          :class="isManga ? 'hover:text-white uppercase tracking-widest text-xs' : 'hover:text-accent'"
         >
           {{ link.label }}
         </a>
         <button
-          class="text-sm text-accent border border-accent/40 rounded-lg px-4 py-1.5 hover:bg-accent/10 transition-colors duration-200"
+          class="text-sm border px-4 py-1.5 transition-colors duration-200"
+          :class="isManga
+            ? 'text-white border-white/40 hover:bg-white/10 rounded-none'
+            : 'text-accent border-accent/40 rounded-lg hover:bg-accent/10'"
           :disabled="isGenerating"
           @click="download"
         >
@@ -72,7 +84,9 @@ onUnmounted(() => {
           <NuxtLink
             :to="switchLocalePath('pt-BR')"
             class="px-2 py-1 rounded transition-colors duration-200"
-            :class="locale === 'pt-BR' ? 'text-accent font-semibold' : 'text-text-muted hover:text-white'"
+            :class="locale === 'pt-BR'
+              ? (isManga ? 'text-white font-semibold border border-white px-2' : 'text-accent font-semibold')
+              : 'text-text-muted hover:text-white'"
           >
             PT
           </NuxtLink>
@@ -80,11 +94,14 @@ onUnmounted(() => {
           <NuxtLink
             :to="switchLocalePath('en')"
             class="px-2 py-1 rounded transition-colors duration-200"
-            :class="locale === 'en' ? 'text-accent font-semibold' : 'text-text-muted hover:text-white'"
+            :class="locale === 'en'
+              ? (isManga ? 'text-white font-semibold border border-white px-2' : 'text-accent font-semibold')
+              : 'text-text-muted hover:text-white'"
           >
             EN
           </NuxtLink>
         </div>
+        <ThemeToggle />
       </div>
 
       <button
@@ -155,6 +172,9 @@ onUnmounted(() => {
             >
               EN
             </NuxtLink>
+          </div>
+          <div class="flex items-center gap-3 pt-2">
+            <ThemeToggle />
           </div>
         </div>
       </div>
