@@ -3,7 +3,7 @@ const { mouseX, mouseY } = useMouseParallax()
 </script>
 
 <template>
-  <section id="contato" class="relative bg-surface-white py-24 lg:py-36 overflow-hidden">
+  <section id="contato" class="relative bg-surface-white py-16 sm:py-24 lg:py-36 overflow-hidden">
     <!-- Decorative gradient orb -->
     <div
       class="absolute w-[400px] h-[400px] rounded-full opacity-[0.06] blur-[100px] pointer-events-none"
@@ -31,7 +31,7 @@ const { mouseX, mouseY } = useMouseParallax()
         Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades de fazer parte da sua equipe.
       </p>
 
-      <div class="reveal flex flex-col sm:flex-row gap-6 mt-10" data-stagger="2">
+      <div class="reveal flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 sm:mt-10" data-stagger="2">
         <a
           href="https://linkedin.com/in/jfernandodev"
           target="_blank"
@@ -52,15 +52,15 @@ const { mouseX, mouseY } = useMouseParallax()
         </a>
       </div>
 
-      <div class="reveal mt-8" data-stagger="3">
-        <p class="text-text-muted flex items-center gap-2">
+      <div class="reveal mt-6 sm:mt-8" data-stagger="3">
+        <p class="text-text-muted text-sm sm:text-base flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
           São Paulo – SP, Brasil
         </p>
       </div>
 
       <!-- Footer -->
-      <div class="reveal mt-24 pt-8 border-t border-border-light flex flex-col sm:flex-row justify-between items-center gap-4" data-stagger="4">
+      <div class="reveal mt-16 sm:mt-24 pt-6 sm:pt-8 border-t border-border-light flex flex-col sm:flex-row justify-between items-center gap-4" data-stagger="4">
         <p class="text-text-muted text-sm">
           &copy; {{ new Date().getFullYear() }} José Fernando Gomes Marcial
         </p>

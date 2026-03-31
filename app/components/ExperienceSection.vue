@@ -51,7 +51,7 @@ const experiences = [
 </script>
 
 <template>
-  <section id="experiencia" class="relative bg-surface-dark py-24 lg:py-36 overflow-hidden">
+  <section id="experiencia" class="relative bg-surface-dark py-16 sm:py-24 lg:py-36 overflow-hidden">
     <!-- Background texture with parallax -->
     <div
       class="absolute left-[-20px] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
@@ -88,11 +88,11 @@ const experiences = [
         <!-- Vertical line -->
         <div class="absolute left-0 lg:left-8 top-0 bottom-0 w-[1px] bg-gradient-to-b from-accent/50 via-accent/20 to-transparent" />
 
-        <div class="space-y-12 lg:space-y-16">
+        <div class="space-y-8 sm:space-y-12 lg:space-y-16">
           <div
             v-for="(exp, index) in experiences"
             :key="exp.company"
-            class="relative pl-8 lg:pl-20"
+            class="relative pl-6 sm:pl-8 lg:pl-20"
           >
             <!-- Timeline dot with pulse -->
             <div class="absolute left-0 lg:left-8 top-2 -translate-x-1/2 z-10">
@@ -109,7 +109,7 @@ const experiences = [
 
             <!-- Card -->
             <div
-              class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 md:p-8 hover:border-accent/20 transition-all duration-300"
+              class="reveal bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-6 md:p-8 hover:border-accent/20 transition-all duration-300"
               :data-stagger="index"
             >
               <div class="flex items-center gap-3 flex-wrap">
@@ -118,21 +118,21 @@ const experiences = [
                   {{ exp.badge }}
                 </span>
               </div>
-              <p class="text-accent text-sm mt-1 font-semibold">{{ exp.role }}</p>
-              <p class="text-white/60 text-[13px] mt-2 leading-relaxed">{{ exp.description }}</p>
+              <p class="text-accent text-xs sm:text-sm mt-1 font-semibold">{{ exp.role }}</p>
+              <p class="text-white/60 text-xs sm:text-[13px] mt-2 leading-relaxed">{{ exp.description }}</p>
 
               <ul class="space-y-3 mt-5 mb-6">
                 <li
                   v-for="item in exp.items"
                   :key="item"
-                  class="text-white/80 text-[15px] leading-relaxed pl-5 relative before:content-['▹'] before:absolute before:left-0 before:top-[2px] before:text-accent"
+                  class="text-white/80 text-xs sm:text-[15px] leading-relaxed pl-5 relative before:content-['▹'] before:absolute before:left-0 before:top-[2px] before:text-accent"
                 >
                   {{ item }}
                 </li>
               </ul>
 
               <!-- Promotion timeline -->
-              <div v-if="exp.promotion" class="flex items-center gap-3 my-5 py-3 px-4 rounded-lg bg-accent/[0.06] border border-accent/15">
+              <div v-if="exp.promotion" class="flex items-center gap-2 sm:gap-3 my-4 sm:my-5 py-2 sm:py-3 px-3 sm:px-4 rounded-lg bg-accent/[0.06] border border-accent/15">
                 <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">{{ exp.promotion.from }}</span>
                 <div class="flex items-center gap-1.5 flex-1">
                   <div class="h-[1px] flex-1 bg-accent/30" />

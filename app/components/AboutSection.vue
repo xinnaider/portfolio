@@ -34,7 +34,7 @@ const highlights = [
 </script>
 
 <template>
-  <section id="sobre" class="relative bg-surface-white py-24 lg:py-36 overflow-hidden">
+  <section id="sobre" class="relative bg-surface-white py-16 sm:py-24 lg:py-36 overflow-hidden">
     <!-- Background texture -->
     <div class="absolute right-[-30px] top-[20%] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-black/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none">
       SOBRE
@@ -51,7 +51,7 @@ const highlights = [
         SOBRE
       </h2>
 
-      <div class="grid lg:grid-cols-2 gap-16">
+      <div class="grid lg:grid-cols-2 gap-8 sm:gap-16">
         <!-- Left: Bio -->
         <div>
           <p class="reveal text-black/70 text-sm sm:text-lg leading-relaxed" data-stagger="1">
@@ -92,11 +92,11 @@ const highlights = [
       </div>
 
       <!-- What I do cards -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-20">
         <div
           v-for="(item, index) in highlights"
           :key="item.title"
-          class="reveal-scale group p-6 bg-white border border-border-light rounded-xl hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
+          class="reveal-scale group p-4 sm:p-6 bg-white border border-border-light rounded-xl hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
           :data-stagger="index + 1"
         >
           <div class="w-10 h-10 rounded-lg bg-surface-light flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors duration-300">
@@ -109,8 +109,8 @@ const highlights = [
             <!-- Dados -->
             <svg v-else class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
           </div>
-          <h3 class="font-display font-bold text-base text-black mb-2">{{ item.title }}</h3>
-          <p class="text-text-muted text-sm leading-relaxed">{{ item.desc }}</p>
+          <h3 class="font-display font-bold text-sm sm:text-base text-black mb-2">{{ item.title }}</h3>
+          <p class="text-text-muted text-xs sm:text-sm leading-relaxed">{{ item.desc }}</p>
         </div>
       </div>
     </div>

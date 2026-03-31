@@ -22,7 +22,7 @@ const categories = [
 </script>
 
 <template>
-  <section id="tech" class="relative bg-surface-light py-24 lg:py-36 overflow-hidden">
+  <section id="tech" class="relative bg-surface-light py-16 sm:py-24 lg:py-36 overflow-hidden">
     <!-- Background texture -->
     <div
       class="absolute left-[-20px] font-display font-extrabold text-[50px] sm:text-[100px] lg:text-[160px] text-black/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none"
@@ -53,7 +53,7 @@ const categories = [
           class="reveal-scale group"
           :data-stagger="catIndex + 1"
         >
-          <div class="p-6 bg-white rounded-xl border border-border-light hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 h-full">
+          <div class="p-4 sm:p-6 bg-white rounded-xl border border-border-light hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 h-full">
             <!-- Category icon -->
             <div class="w-10 h-10 rounded-lg bg-surface-light flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors duration-300">
               <!-- Linguagens -->
@@ -66,7 +66,7 @@ const categories = [
               <svg v-else class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
             </div>
 
-            <h3 class="font-display font-bold text-base text-black mb-5">
+            <h3 class="font-display font-bold text-sm sm:text-base text-black mb-3 sm:mb-5">
               {{ category.label }}
             </h3>
 
@@ -85,7 +85,7 @@ const categories = [
     </div>
 
     <!-- Marquee ticker -->
-    <div class="mt-20 overflow-hidden border-t border-b border-border-light py-4">
+    <div class="mt-12 sm:mt-20 overflow-hidden border-t border-b border-border-light py-3 sm:py-4">
       <div class="flex whitespace-nowrap" style="animation: marquee 30s linear infinite">
         <span v-for="n in 2" :key="n" class="flex gap-8 mr-8">
           <span class="text-black/10 font-display font-extrabold text-lg sm:text-2xl tracking-tight">JAVA</span>
