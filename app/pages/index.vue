@@ -29,5 +29,6 @@ const { progress } = useScrollProgress()
     <TechStackSection />
     <EducationSection />
     <ContactSection />
+    <FloatingPanel />
   </div>
 </template>
