@@ -1,10 +1,13 @@
 <script setup lang="ts">
-const links = [
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Experiência', href: '#experiencia' },
-  { label: 'Tech', href: '#tech' },
-  { label: 'Contato', href: '#contato' }
-]
+const { t, locale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+
+const navKeys = ['about', 'experience', 'tech', 'contact'] as const
+
+const links = computed(() => navKeys.map(key => ({
+  label: t(`nav.${key}`),
+  href: `#${key === 'about' ? 'sobre' : key === 'experience' ? 'experiencia' : key === 'contact' ? 'contato' : key}`
+})))
 
 const { download, isGenerating } = useDownloadCv()
 const isScrolled = ref(false)
@@ -44,7 +47,7 @@ onUnmounted(() => {
     :class="isScrolled ? 'bg-surface-black/90 backdrop-blur-sm border-b border-border-dark' : 'bg-transparent'"
   >
     <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="#" class="font-display font-extrabold text-xl text-white tracking-tight" aria-label="jfernando.dev — Voltar ao topo">
+      <a href="#" class="font-display font-extrabold text-xl text-white tracking-tight" :aria-label="$t('nav.backToTop')">
         jfernando<span class="text-accent">.dev</span>
       </a>
 
@@ -62,13 +65,31 @@ onUnmounted(() => {
           :disabled="isGenerating"
           @click="download"
         >
-          {{ isGenerating ? 'Gerando...' : 'Currículo' }}
+          {{ isGenerating ? $t('nav.generating') : $t('nav.resume') }}
         </button>
+
+        <div class="flex items-center gap-1 text-sm">
+          <NuxtLink
+            :to="switchLocalePath('pt-BR')"
+            class="px-2 py-1 rounded transition-colors duration-200"
+            :class="locale === 'pt-BR' ? 'text-accent font-semibold' : 'text-text-muted hover:text-white'"
+          >
+            PT
+          </NuxtLink>
+          <span class="text-white/20">|</span>
+          <NuxtLink
+            :to="switchLocalePath('en')"
+            class="px-2 py-1 rounded transition-colors duration-200"
+            :class="locale === 'en' ? 'text-accent font-semibold' : 'text-text-muted hover:text-white'"
+          >
+            EN
+          </NuxtLink>
+        </div>
       </div>
 
       <button
         class="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
-        aria-label="Abrir menu"
+        :aria-label="$t('nav.openMenu')"
         @click="toggleMenu"
       >
         <span
@@ -113,8 +134,28 @@ onUnmounted(() => {
             :disabled="isGenerating"
             @click="download(); closeMenu()"
           >
-            {{ isGenerating ? 'Gerando...' : 'Currículo' }}
+            {{ isGenerating ? $t('nav.generating') : $t('nav.resume') }}
           </button>
+
+          <div class="flex items-center gap-2 pt-2 border-t border-white/10">
+            <NuxtLink
+              :to="switchLocalePath('pt-BR')"
+              class="px-3 py-1.5 rounded text-sm transition-colors duration-200"
+              :class="locale === 'pt-BR' ? 'text-accent font-semibold' : 'text-text-muted hover:text-white'"
+              @click="closeMenu"
+            >
+              PT
+            </NuxtLink>
+            <span class="text-white/20">|</span>
+            <NuxtLink
+              :to="switchLocalePath('en')"
+              class="px-3 py-1.5 rounded text-sm transition-colors duration-200"
+              :class="locale === 'en' ? 'text-accent font-semibold' : 'text-text-muted hover:text-white'"
+              @click="closeMenu"
+            >
+              EN
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </Transition>
