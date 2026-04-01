@@ -54,7 +54,7 @@ const highlights = computed(() => tm('about.highlights') as Array<{ title: strin
         </div>
 
         <div>
-          <div ref="countersRef" class="grid grid-cols-3 gap-4 sm:gap-8">
+          <div ref="countersRef" class="hidden sm:grid grid-cols-3 gap-4 sm:gap-8">
             <div class="reveal border-l-2 border-accent pl-3 sm:pl-6" data-stagger="1">
               <span class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-black">+{{ yearsCounter.count.value }}</span>
               <p class="text-text-muted text-[10px] sm:text-xs uppercase tracking-[1px] sm:tracking-[3px] mt-1 sm:mt-2">{{ $t('about.yearsLabel') }}</p>
