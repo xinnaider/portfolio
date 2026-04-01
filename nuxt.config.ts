@@ -60,7 +60,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          innerHTML: "(function(){try{var t=localStorage.getItem('portfolio-theme');if(t==='manga')document.documentElement.setAttribute('data-theme','manga')}catch(e){}})()",
+          innerHTML: "(function(){try{var t=new URLSearchParams(location.search).get('theme');if(t==='manga')document.documentElement.setAttribute('data-theme','manga')}catch(e){}})()",
           type: 'text/javascript',
         },
         {

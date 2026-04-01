@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const yearsCounter = useCounter(5, 1800)
+const yearsCounter = useCounter(4, 1800)
 const projectsCounter = useCounter(20, 1800)
 
 const countersRef = ref<HTMLElement | null>(null)

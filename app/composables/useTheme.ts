@@ -12,7 +12,12 @@ export function useTheme() {
     theme.value = newTheme
     if (import.meta.client) {
       document.documentElement.setAttribute('data-theme', newTheme === Theme.VIOLET ? '' : newTheme)
-      localStorage.setItem('portfolio-theme', newTheme)
+      const router = useRouter()
+      if (newTheme === Theme.MANGA) {
+        router.replace({ query: { theme: 'manga' } })
+      } else {
+        router.replace({ query: {} })
+      }
     }
   }
 
@@ -25,9 +30,10 @@ export function useTheme() {
 
   function initTheme() {
     if (import.meta.client) {
-      const saved = localStorage.getItem('portfolio-theme') as Theme | null
-      if (saved === Theme.MANGA) {
-        setTheme(Theme.MANGA)
+      const route = useRoute()
+      if (route.query.theme === Theme.MANGA) {
+        theme.value = Theme.MANGA
+        document.documentElement.setAttribute('data-theme', Theme.MANGA)
       }
     }
   }
