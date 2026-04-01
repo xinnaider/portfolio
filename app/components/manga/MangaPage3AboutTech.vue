@@ -64,8 +64,8 @@ const techStack = {
       <!-- Counters right: dark panel -->
       <div
         ref="countersRef"
-        class="mp mp--dark manga-counters-panel"
-        style="border:none; padding:clamp(20px,3vw,40px); display:flex; flex-direction:column; justify-content:center; gap:24px; overflow:hidden;"
+        class="mp mp--dark manga-counters-panel hidden sm:flex flex-col"
+        style="border:none; padding:clamp(20px,3vw,40px); flex-direction:column; justify-content:center; gap:24px; overflow:hidden;"
       >
         <div class="manga-ht manga-ht--dark" style="inset:0; opacity:0.3;" aria-hidden="true" />
         <div style="text-align:center; position:relative; z-index:1;">
