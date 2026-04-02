@@ -111,7 +111,8 @@ li { font-size: 11px; color: #333; margin-bottom: 1.5px; line-height: 1.5; }
 
   <div class="sec">
     <h2>${t('about.title')}</h2>
-    <p>${t('about.bio3')}</p>
+    <p>${t('about.bio1')}</p>
+    <p style="margin-top:4px;">${t('about.bio2')}</p>
   </div>
 
   <div class="sec">
